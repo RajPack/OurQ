@@ -2,3 +2,13 @@
     background-color: #373538;
     border-radius: 0;
 }
+.jumbotron {
+    min-height: 200px;
+}
+.insteadQLogo {
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    top: 0px;
+    left: 0px;
+}
