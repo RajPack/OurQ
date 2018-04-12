@@ -1,0 +1,51 @@
+[
+    { 
+        "id": 12, 
+        "name": "vendor 1", 
+        "locationDC": "Bangalore DC",
+        "kioks": [
+            {   "kiosikid": 123,
+                "vendor_id": 12,
+                "kioskName": "kiosk 2",
+                "kiosk Adress" : "123, building 23, sdfsafdasf",
+                "kiosk building" : "Building 23"
+            }
+        ]  
+    },
+    { 
+        "id": 12, 
+        "name": "vendor 1", 
+        "locationDC": "Bangalore DC",
+        "kioks": [
+            {   "kiosikid": 123,
+                "kioskName": "kiosk 2",
+                "kiosk Adress" : "123, building 23, sdfsafdasf",
+                "kiosk building" : "Building 23"
+            }
+        ]  
+    },
+    { 
+        "id": 12, 
+        "name": "vendor 1", 
+        "locationDC": "Bangalore DC",
+        "kioks": [
+            {   "kiosikid": 123,
+                "kioskName": "kiosk 2",
+                "kiosk Adress" : "123, building 23, sdfsafdasf",
+                "kiosk building" : "Building 23"
+            }
+        ]  
+    },
+    { 
+        "id": 12, 
+        "name": "vendor 1", 
+        "locationDC": "Bangalore DC",
+        "kioks": [
+            {   "kiosikid": 123,
+                "kioskName": "kiosk 2",
+                "kiosk Adress" : "123, building 23, sdfsafdasf",
+                "kiosk building" : "Building 23"
+            }
+        ]  
+    }
+]

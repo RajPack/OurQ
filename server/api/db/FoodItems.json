@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Biriyani Veg",
+        "veg": true,
+        "id": 1234,
+        "kioskID": 123,
+        "desc": "long desc of the food item",
+        "priceINR" : 40,
+        "pics":[
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg"
+        ]
+    },
+    {
+        "name": "Biriyani Veg",
+        "id": 1234,
+        "kioskID": 123,
+        "desc": "long desc of the food item",
+        "priceINR" : 40,
+        "pics":[
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg"
+        ]
+    },
+    {
+        "name": "Biriyani Veg",
+        "id": 1234,
+        "kioskID": 123,
+        "desc": "long desc of the food item",
+        "priceINR" : 40,
+        "pics":[
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg"
+        ]
+    },
+    {
+        "name": "Biriyani Veg",
+        "id": 1234,
+        "kioskID": 123,
+        "desc": "long desc of the food item",
+        "priceINR" : 40,
+        "pics":[
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg",
+            "../123/1234/123324.jpg"
+        ]
+    }
+]
