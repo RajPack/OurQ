@@ -1,0 +1,16 @@
+<GridLayout rows="*", columns="2*, *" class="float-cart-layout" [shadow]="fabShadow">
+    <StackLayout  row="0" col="0" padding="10" orientation="vertical">
+            <Label verticalAlignment="middle" height="25" [text]="itemsText" class="float-cart-label label-left"> </Label>
+            <StackLayout orientation="horizontal">
+                <Label verticalAlignment="middle" height="20" text="&#xf156; " class="fa float-cart-label label-left" width="auto"> </Label>
+                <Label height="20" [text]="price" class="fa float-cart-label label-left"></Label>
+            </StackLayout>
+            
+    </StackLayout>
+    
+    <StackLayout row=0 col="1"  height="100%"   orientation="horizontal">
+            <Label text="View Cart" paddingTop="18%" fontSize="16" marginTop="0" class="float-cart-label label-right" width="70%"> </Label>
+            <Label text="&#xf0a9;" paddingTop="15%" fontSize="28" class="fa float-cart-label label-right"> </Label>
+    </StackLayout>
+
+</GridLayout>

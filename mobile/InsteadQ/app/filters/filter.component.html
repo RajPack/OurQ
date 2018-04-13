@@ -1,0 +1,30 @@
+<StackLayout>
+        <StackLayout orientation="horizontal" class="header-row">
+                <Label width="80%" text="Filters" class="filter-header" height="33"></Label>
+                <Label width="20%" text="Clear All" class="filter-clear-link"  horizontalAlignment="right"></Label>
+            </StackLayout>
+    <ScrollView>
+        <StackLayout  >
+
+
+            <StackLayout *ngFor="let filter of listObservable | async">
+                <GridLayout rows="*" columns="4*, *" class="category-header">
+                    <Label row="0" col="0" [text]="filter.filterCategory" class="filterCategory-header" height="35"></Label>
+                    <Label row="0" col="1" text="&#xf139;" class="filterCategory-arrow fa" horizontalAlignment="right"></Label>
+                </GridLayout>
+                <StackLayout>
+                    <ScrollView>
+                        <StackLayout>
+                            <StackLayout *ngFor="let option of filter.options" class="filter-option">
+                                <GridLayout rows="*" columns="4*, *">
+                                    <Label row="0" col="0" [text]="option.name" paddingTop="13" verticalAlignment="center" height="35" class="option-label"></Label>
+                                    <Switch row="0" col="1" [checked]="option.checked" (checkedChange)="onOptionChecked($event)" class=""></Switch>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

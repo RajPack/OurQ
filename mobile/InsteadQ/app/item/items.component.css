@@ -1,0 +1,33 @@
+.floatingCart{
+    margin-top: 86%;
+    z-index: 1;
+}
+#sidedrawerId {
+    z-index: 2;
+}
+.textcenter{
+    text-align: center;
+  }
+.counterWrapper{
+    border-width: 1;
+    border-color: #099E44;
+    border-radius: 4%;
+}
+.counterLabel{
+    margin-left: 10;
+    margin-right: 10;
+    margin-top: 5;
+}
+.green-bg{
+    background: #099E44;
+    color: white;
+}
+.lightgreen-bg {
+    background: #2ECC71 ;
+}
+.green-text {
+    color: #099E44;
+}
+.pull-right {
+    float: right;
+}
