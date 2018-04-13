@@ -1,0 +1,117 @@
+<ActionBar title="InsteadQ" class="action-bar">
+    <NavigationButton text="Menu" icon="res://ic_menu_white_24dp" (tap)="sideDrawer.toggle()" padding="0"></NavigationButton>
+</ActionBar>
+
+<AbsoluteLayout>
+    <ng-template #sideDrawerContent>
+        <StackLayout class="sidedrawer-header">
+            <Image class="sidedrawer-header-image" src="res://icon">
+            </Image>
+            <Label class="sidedrawer-header-brand" text="Qless - The Food App">
+            </Label>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout orientation="vertical" class="sidedrawer-content">
+                <Ripple rippleColor="#007DB8" (tap)="sideDrawer.navigate(router, [''])">
+                    <Label borderColor="#FFFFFF" class="sidedrawer-list-item-text borderless-btn fa" text="&#xf015;   Home">
+                    </Label>
+                </Ripple>
+                <Ripple rippleColor="#007DB8" (tap)="sideDrawer.navigate(router, ['/foodCart'])">
+                    <Label borderColor="#FFFFFF" class="sidedrawer-list-item-text borderless-btn fa" text="&#xf07a;    Food Cart">
+                    </Label>
+                </Ripple>
+                <Ripple rippleColor="#007DB8" (tap)="sideDrawer.navigate(router, ['/orders'])">
+                    <Label borderColor="#FFFFFF" class="sidedrawer-list-item-text borderless-btn fa" text="&#xf291;   Orders">
+                    </Label>
+                </Ripple>
+            </StackLayout>
+        </ScrollView>
+    </ng-template>
+    <ng-template #pageMainContent>
+        <StackLayout *ngIf="!isLoading">
+            <StackLayout class="page">
+                <ScrollView class="list-group">
+                    <StackLayout class="category-container">
+                        <GridLayout rows="*" columns= "80, 50, *" backgroundColor="white" height="40"  verticalAlignment="middle">
+                                <Label col="0" row="0" fontSize="14" text="VEG ONLY" paddingLeft="8" class="label" verticalAlignment="middle"></Label>
+                            <Switch col="1" row="0" checked="false" (checkedChange)="onVegFilter($event)"></Switch>
+                        </GridLayout>
+                        <StackLayout *ngFor="let category of categoriesItems" class="category-card">
+                            <Label [text]="category.name" class="title category-title"></Label>
+                            <StackLayout *ngFor="let item of category.items" class="item-card" marginBottom="15">
+                                <StackLayout orientation="horizontal">
+                                    <StackLayout width="5%" paddingTop="5">
+                                        <Image *ngIf="item.veg" src="res://veg"  marginRight="1"></Image>
+                                        <Image *ngIf="!item.veg" src="res://non_veg" marginRight="1"></Image>
+                                    </StackLayout>
+                                    <StackLayout orientation="vertical" width="60%">
+                                        <Label [text]="item.name" class="food-item-name"></Label>
+                                        <StackLayout orientation="horizontal" class="food-price-container">
+                                            <Label text="&#xf156; " class="fa"></Label>
+                                            <Label [text]="item.price" class="fa food-item-price"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" width="35%" horizontalAlignment="right" paddingRight="4">
+                                        <FlexboxLayout flexDirection="row" class="counterWrapper" justifyContent="center" paddingTop="0" paddingBottom="0" 
+                                            height="26" width="auto">
+                                            <Label *ngIf="item.cartCount===0" text="Add" (tap)="addtoCart(item)" textWrap="true" verticalAlignment="center" paddingLeft="15"
+                                                marginTop="13%" paddingRight="15" class=" textcenter green-text"></Label>
+                                            <Label *ngIf="item.cartCount>0" fontWeight="bold" horizontalAlignment="left" text="-" width="22%" height="100%" (tap)="removeFromCart(item)"
+                                                fontSize="20" class="white-text green-bg textcenter"></Label>
+                                            <Label *ngIf="item.cartCount>0" [text]="item.cartCount" textWrap="true" class="counterLabel textcenter green-text"></Label>
+                                            <Label text="+" fontWeight="bold" width="22%" height="100%" (tap)="addtoCart(item)" fontSize="20" class="white-text textcenter"
+                                                [ngClass]="{'lightgreen-bg': item.cartCount===0, 'green-bg':item.cartCount>0}"></Label>
+                                        </FlexboxLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout marginLeft="8">
+                                    <Label *ngIf="item.additionalInfo" [text]="item.additionalInfo" class="additional-info"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!-- <StackLayout *ngFor="let item of items" orientation="vertical">
+                            <StackLayout orientation="horizontal">
+                                <Label *ngIf="item.veg" text="&#xf192;" class="fa" color="green"></Label>
+                                <Label *ngIf="!item.veg" text="&#xf192;" class="fa" color="red"></Label>
+                                <StackLayout orientation="vertical" class="list-group-item" width="65%">
+                                        <Label [text]="item.name" class="item-name" ></Label>
+                                        <StackLayout orientation="horizontal">
+                                                <Label text="&#xf156;" class="fa"></Label>
+                                                <Label [text]="item.price" class="fa item-price" ></Label>
+                                        </StackLayout>
+                                </StackLayout>
+                               
+                                
+                            </StackLayout>
+                        </StackLayout> -->
+                        <StackLayout *ngIf="totalcartCount>0 " height="100" class="bottom-buffer-layout hr-dark" backgroundColor="#ffffff">
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+
+        </StackLayout>
+        <GridLayout class="loader-container" [visibility]="isLoading ? 'visible' : 'collapsed'">
+            <ActivityIndicator width="50" height="50" [busy]="isLoading" class="activity-indicator">
+            </ActivityIndicator>
+        </GridLayout>
+    </ng-template>
+    <RadSideDrawer #sidedrawerId [transition]="drawerTransition" width="100%" height="100%" [style.zIndex]="radSDzIndex">
+        <StackLayout tkDrawerContent class="sidedrawer-left">
+            <ng-container *ngTemplateOutlet="sideDrawerContent"></ng-container>
+        </StackLayout>
+        <StackLayout tkMainContent>
+            <ng-container *ngTemplateOutlet="pageMainContent"></ng-container>
+        </StackLayout>
+    </RadSideDrawer>
+
+    <StackLayout *ngIf="totalcartCount>0" width="100%" class="floatingCart" style.zIndex="2">
+        <Ripple rippleColor="#007DB8" [nsRouterLink]="['/foodCart']" width="95%">
+            <app-floating-cart [numberOfItems]="totalcartCount" [price]="totalPrice"></app-floating-cart>
+        </Ripple>
+    </StackLayout>
+
+</AbsoluteLayout>

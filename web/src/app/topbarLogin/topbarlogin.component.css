@@ -1,0 +1,23 @@
+.fa {
+    font-size: 25px !important;
+    color: #f8f9fa !important;
+}
+.iquserbar {
+    color: #f8f9fa !important;
+    display: inline-flex;
+    float: right;
+}
+.iqusericonimage {
+    margin-left: 6px;
+}
+.iqusericonname {
+    font-family: serif;
+}
+.iqblankspace {
+    min-width: 30px;
+}
+.loginbarContainer {
+    top: 8px;
+    position: fixed;
+    right: 0;
+}
