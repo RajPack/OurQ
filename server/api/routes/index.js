@@ -15,4 +15,9 @@ router.get('/vendor/list', function (req, res) {
     ControllerQless.GetVendors(res);
 })
 
+router.get('/test', function (req, res) {
+    res.send('Its from Amol machine');
+    //ControllerQless.GetVendors(res);
+})
+
 module.exports = router;
