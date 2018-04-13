@@ -1,24 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, Component } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './topbar/topbar.component';
-import { SideBarComponent } from './sidebar/sidebar.component';
-import { homeComponent } from './home/home.component';
 import { TopBarAppModule } from './insteadQModules/topbar.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    TopBarAppModule
-  ],
   declarations: [
     AppComponent
-    // TopBarComponent
-    // SideBarComponent,
-    // homeComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    NgbModule.forRoot(),
+    TopBarAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
