@@ -33,7 +33,7 @@
             <StackLayout class="page">
                 <ScrollView class="list-group">
                     <StackLayout>
-                        <StackLayout *ngFor="let item of items" orientation="vertical">
+                        <StackLayout *ngFor="let item of items | async" orientation="vertical">
                             <StackLayout orientation="horizontal">
                                 <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item" width="65%"></Label>
                                 <StackLayout orientation="horizontal" width="35%" horizontalAlignment="right" paddingRight="4">
