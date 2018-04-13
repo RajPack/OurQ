@@ -1,17 +1,17 @@
 .search-bar {
-    font-size: 16px;
+    font-size: 16;
 }
 .kiosk-head{
     font-weight: bold;
     color:rgb(24, 21, 21);
-    font-size: 18px;
+
 }
 .kiosk-info{
-    font-size: 14px;
+    font-size: 14;
 }
 .kiosk-timing{
  color: rgb(145, 35, 35);
- font-size: 12px;
+ font-size: 12;
 }
 .kiosk-image {
     vertical-align: center;

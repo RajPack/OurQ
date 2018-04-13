@@ -23,6 +23,7 @@ import { HomeComponent } from "./home/home.component";
 import { KioskService } from "./services/kiosks.service";
 import { FilterComponent } from "./filters/filter.component";
 import { FilterService } from "./services/filter.service";
+import { KioskItemsService } from "./services/kiosksItems.service";
 
 @NgModule({
     bootstrap: [
@@ -49,7 +50,8 @@ import { FilterService } from "./services/filter.service";
     providers: [
         ItemService,
         KioskService,
-        FilterService
+        FilterService,
+        KioskItemsService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

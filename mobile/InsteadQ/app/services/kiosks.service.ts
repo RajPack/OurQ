@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { KioskModel } from "../models/kioskModel";
+import { KioskItem } from "../models/kioskItemModel";
 
 @Injectable()
 export class KioskService {
@@ -12,7 +13,7 @@ export class KioskService {
 
         let homeObservable = Observable.create((observer)=>{
             console.log("inside service");
-            observer.next([...dummyKioskData, ...dummyKioskData]);
+            observer.next([...dummyKioskData, ...dummyKioskData, ...dummyKioskData]);
             observer.complete();
         });
 

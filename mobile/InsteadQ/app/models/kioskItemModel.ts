@@ -5,5 +5,11 @@ export interface KioskItem {
     price: number,
     category: string,
     veg: boolean,
-    servingNow: boolean
+    servingNow: boolean,
+    cartCount?: number
+}
+
+export interface CategorizedItem {
+    name: string,
+    items: KioskItem[]
 }

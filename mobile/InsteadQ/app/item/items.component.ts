@@ -2,14 +2,14 @@
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Observable } from 'rxjs/Observable';
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
-import { Component, OnInit,  ViewChild, AfterViewInit, ChangeDetectorRef, TemplateRef } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef, TemplateRef } from "@angular/core";
 
 import { Item } from "./item";
 import { ItemService } from "./item.service";
 import { Router } from "@angular/router";
 import { QlessSideBar } from "../sideBar/sidebar";
 import { KioskItemsService } from "../services/kiosksItems.service";
-import { KioskItem } from "../models/kioskItemModel";
+import { KioskItem, CategorizedItem } from "../models/kioskItemModel";
 
 
 
@@ -26,41 +26,65 @@ export class ItemsComponent implements OnInit, AfterViewInit {
     private totalcartCount = 0;
     private totalPrice = 0;
     private isLoading = false;
-    items: Observable<KioskItem[]>;
+    items: KioskItem[];
+    categoriesItems: CategorizedItem[];
     // This pattern makes use of Angular’s dependency injection implementation to inject an instance of the ItemService service into this class. 
     // Angular knows about this service because it is included in your app’s main NgModule, defined in app.module.ts.
     constructor(private itemService: KioskItemsService, private router: Router, private changeDetectionRef: ChangeDetectorRef) {
         this.isLoading = true;
-        setTimeout(()=>{
+        setTimeout(() => {
             this.isLoading = false;
-        },1000);
-     }
-    ngOnInit(): void {
-        this.items = this.itemService.getKioskItemsbyId("123");
+        }, 1000);
     }
-    ngAfterViewInit(){
+    ngOnInit(): void {
+        this.itemService.getKioskItemsbyId("123").subscribe((itemsArr) => {
+            this.items = itemsArr.map((item) => {
+                item.cartCount = item.cartCount ? item.cartCount : 0;
+                return item;
+            });
+            this.categoriesItems = this.itemService.categorizeItems(this.items);
+        });
+    }
+    ngAfterViewInit() {
         this.sideBarInit(this.drawerComponent.sideDrawer);
     }
-    addtoCart(item: Item) {
-        item.cartCount ++;
-        this.totalcartCount ++;
+    addtoCart(item: KioskItem) {
+        item.cartCount++;
+        this.totalcartCount++;
         console.log(this.totalcartCount);
-        this.totalPrice += 60;
+        this.totalPrice += item.price
     }
-    removeFromCart(item: Item){
-        item.cartCount --;
-        this.totalcartCount --;
-        this.totalPrice -= 60;
+    removeFromCart(item: KioskItem) {
+        item.cartCount--;
+        this.totalcartCount--;
+        this.totalPrice -= item.price;
     }
-    sideBarInit(drawer: RadSideDrawer){
+    sideBarInit(drawer: RadSideDrawer) {
         this.sideDrawer = new QlessSideBar(drawer);
-        this.sideDrawer.onOpening(()=>{
+        this.sideDrawer.onOpening(() => {
             this.radSDzIndex = 4;
             this.changeDetectionRef.detectChanges();
         });
-        this.sideDrawer.onClosing(()=>{
+        this.sideDrawer.onClosing(() => {
             this.radSDzIndex = 1;
             this.changeDetectionRef.detectChanges();
         });
+    }
+    onVegFilter(args) {
+        let vegOnly = args.object.checked;
+        args.object.color = vegOnly ? "#93CE7A" : "lightgray";
+        setTimeout(() => {
+
+            let filtereditems = this.items.filter((item) => {
+                if (vegOnly && item.veg) {
+                    return true;
+                }
+                else if (!vegOnly) {
+                    return true;
+                }
+            });
+            this.categoriesItems = this.itemService.categorizeItems(filtereditems);
+        }, 400);
+
     }
 }
