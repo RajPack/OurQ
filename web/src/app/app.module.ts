@@ -5,6 +5,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { TopBarAppModule } from './insteadQModules/topbar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { SideBarAppModule } from './insteadQModules/sidebar.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     BrowserModule,
     NgbModule.forRoot(),
-    TopBarAppModule
+    TopBarAppModule,
+    SideBarAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
