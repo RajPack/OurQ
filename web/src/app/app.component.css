@@ -5,6 +5,10 @@
     /* background-color: #002d30; */
     background-color: #172035;
     /* background-color: #307686; */
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    /* padding: 10px; */
+    /* background: white; */
+    position: relative;
 }
 .jumbotron {
     min-height: 100%;
@@ -38,6 +42,9 @@
 }
 .approotClass {
     height: 100%;
+    background-color: #f0e9ee;
+    background-color: #569376;
+    background-color: #64947C;
 }
 .bottomContainer {
     height: 70%;
@@ -51,4 +58,49 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+.appHomeContainer {
+    height: 90%;
+    min-height: 90%;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+    max-height: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    float: right;
+    margin-top: 2%;
+}
+/* #style-8::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+#style-8::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
+} */
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
 }

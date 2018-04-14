@@ -4,7 +4,10 @@
         <label class="col-12" for="cmn-toggle-4"></label>
     </div>
     <div class="col-8" style="padding-left: 0;">
-        <label class="col-12" style="font-size: 22px; color: white; padding-left: 0;">Veg Only</label>
+        <label class="col-12" 
+            style="font-size: 22px; color: black; padding-left: 0; font-family: serif;">
+            Veg Only
+        </label>
     </div>
 </div>
 <br>
@@ -13,7 +16,10 @@
         <!--closeOthers=true>-->
         <ngb-panel *ngFor="let filter of filterListObservable | async">
             <ng-template ngbPanelTitle>
-                <span class="title col-12">{{ filter.filterCategory }}</span>
+                <span class="title col-12" 
+                      style="font-family: serif;">
+                    {{ filter.filterCategory }}
+                </span>
             </ng-template>
             <ng-template ngbPanelContent>
                 <div class="container col-12" *ngFor="let option of filter.options">
@@ -22,7 +28,7 @@
                         <div class="state p-success">
                             <i class="icon mdi mdi-check col-1"></i>
                             <!-- <span class="label col-11">{{ option.name }}</span> -->
-                            <label class="col-11">{{ option.name }}</label>
+                            <label class="col-11" style="font-family: serif;">{{ option.name }}</label>
                         </div>
                     </div>
                 </div>

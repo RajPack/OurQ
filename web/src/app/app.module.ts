@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TopBarAppModule } from './insteadQModules/topbar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SideBarAppModule } from './insteadQModules/sidebar.module';
+import { HomeAppModule } from './insteadQModules/home.module';
+import { HomeRouterAppModule } from './insteadQModules/home-router.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SideBarAppModule } from './insteadQModules/sidebar.module';
     BrowserModule,
     NgbModule.forRoot(),
     TopBarAppModule,
-    SideBarAppModule
+    SideBarAppModule,
+    HomeAppModule,
+    HomeRouterAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
