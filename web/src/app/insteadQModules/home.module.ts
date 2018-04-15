@@ -9,6 +9,7 @@ import { SearchListComponent } from "../home/searchlist/searchlist.component";
 import { HomeRouterAppModule } from "./home-router.module";
 import { PageNotFoundComponent } from "../home/pagenotfound/pagenotfound.component";
 import { KioskService } from "../services/kiosks.service";
+import { KioskItemsService } from "../services/kiosksItems.service";
 
 @NgModule({
     imports: [
@@ -25,7 +26,7 @@ import { KioskService } from "../services/kiosks.service";
         SearchListComponent,
         PageNotFoundComponent
     ],
-    providers: [KioskService],
+    providers: [KioskService, KioskItemsService],
     exports: [
         HomeComponent,
         KioskListComponent,

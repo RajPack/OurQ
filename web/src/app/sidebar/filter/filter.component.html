@@ -1,6 +1,9 @@
 <div class="container col-12" style="display: inline-flex;">
     <div class="switch col-4">
-        <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+        <input id="cmn-toggle-4" 
+               class="cmn-toggle cmn-toggle-round-flat" 
+               type="checkbox"
+               (change)="onCheckBoxChange($event)">
         <label class="col-12" for="cmn-toggle-4"></label>
     </div>
     <div class="col-8" style="padding-left: 0;">
@@ -23,9 +26,11 @@
             </ng-template>
             <ng-template ngbPanelContent>
                 <div class="container col-12" *ngFor="let option of filter.options">
-                    <div class="pretty p-icon p-round p-pulse">
-                        <input type="checkbox" [checked]="option.checked">
-                        <div class="state p-success">
+                    <div class="pretty p-icon p-round p-pulse col-12">
+                        <input type="checkbox" 
+                               [checked]="option.checked" 
+                               (change)="onCheckBoxChange($event, option)">
+                        <div class="state p-success col-12">
                             <i class="icon mdi mdi-check col-1"></i>
                             <!-- <span class="label col-11">{{ option.name }}</span> -->
                             <label class="col-11" style="font-family: serif;">{{ option.name }}</label>

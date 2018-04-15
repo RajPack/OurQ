@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, style } from "@angular/core";
+import { Component, OnInit, HostBinding, style, OnDestroy } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { KioskModel } from "../../models/kioskModel";
 import { slideInDownAnimation } from "../../animations/animations";
@@ -10,7 +10,7 @@ import { slideInDownAnimation } from "../../animations/animations";
     animations: [slideInDownAnimation]
 })
 
-export class KioskListComponent implements OnInit {
+export class KioskListComponent implements OnInit, OnDestroy {
     kiosks: KioskModel[];
     @HostBinding('@routeAnimation') routeAnimation = true;
     @HostBinding('style.display') display = 'block';
@@ -25,5 +25,9 @@ export class KioskListComponent implements OnInit {
             console.log(val);
             this.kiosks = val.kiosks;
         })
+    }
+
+    ngOnDestroy() {
+        console.log('destroyed');
     }
 }

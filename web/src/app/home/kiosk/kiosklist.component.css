@@ -2,6 +2,8 @@
     min-height: 50%;
     max-height: 50%;
     height: 50%;
+    z-index: 2;
+    position: relative;
 }
 .iqcarddiv {
     min-height: 100%;
@@ -16,3 +18,27 @@
 .card-text {
     font-family: serif;
 }
+.card-wrapper {
+    -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        perspective: 1000;
+}
+/* .card-wrapper:hover, .card-wrapper.hover  {  
+    -webkit-transform: scale(1.5,1.5) translate3d(5%, 5%, -100px);
+    -moz-transform: scale(2,2);
+    transform: scale(2,2);
+    position: relative;
+  } */
+
+  .iqkioskdiv:hover, .iqkioskdiv.hover  {  
+    -webkit-transform: scale(1,1) translate3d(10%, 10%, -100px);
+    -moz-transform: scale(1.05,1.1);
+    transform: scale(1.05,1.1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  div {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }

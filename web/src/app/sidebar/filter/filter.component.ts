@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FilterService } from "../../services/filter.service";
 import { Observable } from "rxjs/Observable";
-import { Filter } from "../../models/filterModel";
+import { Filter, FilterOptions } from "../../models/filterModel";
 
 @Component({
     selector: 'app-filter',
@@ -17,5 +17,10 @@ export class FilterComponent implements OnInit {
 
     ngOnInit() {
         this.filterListObservable = this.service.getFilterList();
+    }
+
+    onCheckBoxChange(args, option?: FilterOptions){
+        (option) ? (option.checked = args.target.checked) : (console.log('Veg Only'));
+        console.log(args);
     }
 }

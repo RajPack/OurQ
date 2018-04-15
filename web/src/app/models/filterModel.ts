@@ -3,7 +3,7 @@ export interface Filter{
     options: FilterOptions[]
 }
 
-interface FilterOptions {
+export interface FilterOptions {
     name: string,
     checked: boolean
 }

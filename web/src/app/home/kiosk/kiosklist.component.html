@@ -1,32 +1,38 @@
 <div class="col-12">
-    <div *ngFor="let kiosk of kiosks" class="iqkioskdiv">
-        <div class="card iqcarddiv col-12" style="cursor: pointer">
-            <div class="col-12" style="display: inline-flex;">
-                <div class="col-4">
-                    <h4 class="card-title" style="font-family: serif;">{{ kiosk.name }}</h4>
+    <div *ngFor="let kiosk of kiosks" 
+         class="iqkioskdiv" 
+         style="line-height: 1.2;"
+         [routerLink]="['/kiosk', kiosk.id]">
+        <div class="card-wrapper col-12">
+            <div class="card iqcarddiv col-12" style="cursor: pointer">
+                <div class="col-12" style="display: inline-flex;">
+                    <div class="col-4">
+                        <h4 class="card-title" style="font-family: serif;">{{ kiosk.name }}</h4>
+                    </div>
+                    <div class="col-8">
+                        <h6 class="card-title" style="font-family: serif; float: right;">
+                            {{ kiosk.subLocation }} - {{ kiosk.address }}
+                        </h6>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <h6 class="card-title" style="font-family: serif; float: right;">
-                        {{ kiosk.subLocation }} - {{ kiosk.address }}
-                    </h6>
-                </div>
-            </div>
-            <div class="col-12" style="display: inline-flex;">
-                <div class="col-3">
-                    <img class="card-img-top" [src]="kiosk.imageURL" alt="Card image">
-                </div>
-                <div class="col-9">
-                    <p class="card-text">{{ kiosk.desc }}</p>
-                    <p class="card-text">Cuisines: {{ kiosk.cousines }}</p>
-                    <p class="card-text" style="color: brown;">Timings: {{ kiosk.timings }}</p>
-                    <p class="card-text" *ngIf="kiosk.vegan">
-                        <span>
-                            <img class="card-img-top" src="../assets/images/veg.png" alt="Card image" style="height: 4%; width: 4%;"> Veg Only
-                        </span>
-                    </p>
+                <div class="col-12" style="display: inline-flex;">
+                    <div class="col-3">
+                        <img class="card-img-top" [src]="kiosk.imageURL" alt="Card image">
+                    </div>
+                    <div class="col-9">
+                        <p class="card-text">{{ kiosk.desc }}</p>
+                        <p class="card-text">Cuisines: {{ kiosk.cousines }}</p>
+                        <p class="card-text" style="color: brown;">Timings: {{ kiosk.timings }}</p>
+                        <p class="card-text" *ngIf="kiosk.vegan">
+                            <span>
+                                <img class="card-img-top" src="../assets/images/veg.png" alt="Card image" style="height: 4%; width: 4%;"> Veg Only
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <br>
     </div>
 </div>
+<!-- <router-outlet></router-outlet> -->

@@ -4,6 +4,10 @@ import { KioskListComponent } from '../home/kiosk/kiosklist.component';
 import { KioskListResolver } from '../services/kiosklist-resolve.service';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from '../home/pagenotfound/pagenotfound.component';
+import { SearchListComponent } from '../home/searchlist/searchlist.component';
+import { SearchListResolver } from '../services/search-resolve.service';
+import { KioskComponent } from '../home/kiosk/kiosk.component';
+import { KioskItemResolver } from '../services/kioskitem-resolve.service';
 
 const homeRoutes: Routes = [
     {
@@ -13,6 +17,23 @@ const homeRoutes: Routes = [
         path: 'home', 
         component: KioskListComponent,
         resolve: { kiosks: KioskListResolver }
+        // children: [
+        //     {
+        //         path: ':id', 
+        //         component: KioskComponent,
+        //         resolve: { kiosk: KioskItemResolver }
+        //     }
+        // ]
+    },
+    {
+        path: 'kiosk/:id',
+        component: KioskComponent,
+        resolve: { kiosk: KioskItemResolver }
+    },
+    {
+        path: 'searchresult',
+        component: SearchListComponent,
+        resolve: { searchlist: SearchListResolver }
     },
     {
         path: '**', component: PageNotFoundComponent
@@ -27,7 +48,9 @@ const homeRoutes: Routes = [
         RouterModule
     ],
     providers: [
-        KioskListResolver
+        KioskItemResolver,
+        KioskListResolver,
+        SearchListResolver
     ]
 })
 
