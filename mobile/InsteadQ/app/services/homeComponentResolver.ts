@@ -11,7 +11,7 @@ export class HomeComponentResolver implements Resolve<Observable<KioskModel[]>> 
 
     }
     resolve(){
-        console.log("Inside resolver");
+        this.kioskService.pingServer();
         return this.kioskService.getHomePageKiosks();
     }
 

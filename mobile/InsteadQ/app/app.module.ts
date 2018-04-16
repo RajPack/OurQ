@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import {  NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NgShadowModule } from 'nativescript-ng-shadow';
 
 import { AppRoutingModule } from "./app.routing";
@@ -24,6 +25,8 @@ import { KioskService } from "./services/kiosks.service";
 import { FilterComponent } from "./filters/filter.component";
 import { FilterService } from "./services/filter.service";
 import { KioskItemsService } from "./services/kiosksItems.service";
+import { BackendService } from "./services/backend.service";
+import { ActionCreatorService } from "./services/Store/ActionCreators/action.creator.service";
 
 @NgModule({
     bootstrap: [
@@ -32,6 +35,7 @@ import { KioskItemsService } from "./services/kiosksItems.service";
     imports: [
         NativeScriptModule,
         NativeScriptHttpModule,
+        NativeScriptHttpClientModule,
         AppRoutingModule,
         NativeScriptUISideDrawerModule,
         NativeScriptCommonModule,
@@ -51,7 +55,9 @@ import { KioskItemsService } from "./services/kiosksItems.service";
         ItemService,
         KioskService,
         FilterService,
-        KioskItemsService
+        KioskItemsService,
+        BackendService,
+        ActionCreatorService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

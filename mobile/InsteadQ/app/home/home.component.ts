@@ -28,7 +28,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.activatedRoute.data.subscribe((data)=>{
             console.log("resolving");
             this.kiosks = data.kiosks;
-        })
+        });
     }
     disableSearchFocus(args){
         if(isAndroid) {
