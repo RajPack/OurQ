@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import {  NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NgShadowModule } from 'nativescript-ng-shadow';
 
 import { AppRoutingModule } from "./app.routing";
@@ -32,6 +33,7 @@ import { KioskItemsService } from "./services/kiosksItems.service";
     imports: [
         NativeScriptModule,
         NativeScriptHttpModule,
+        NativeScriptHttpClientModule,
         AppRoutingModule,
         NativeScriptUISideDrawerModule,
         NativeScriptCommonModule,

@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import { KioskModel } from "../models/kioskModel";
 import { KioskItem } from "../models/kioskItemModel";
@@ -6,7 +7,7 @@ import { KioskItem } from "../models/kioskItemModel";
 @Injectable()
 export class KioskService {
 
-    constructor(){
+    constructor(private http: HttpClient){
 
     }
     getHomePageKiosks(){
@@ -18,6 +19,12 @@ export class KioskService {
         });
 
         return homeObservable;
+    }
+    pingServer(){
+        let url="https://localhost:5000/api/test";
+        this.http.get(url).subscribe((data)=>{
+           console.log(JSON.stringify(data));
+        });
     }
 }
 

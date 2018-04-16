@@ -33,9 +33,9 @@ app.get("/", function(req, res){
   
   var options = {
   
-  key: fs.readFileSync("insteadq.key"),
+  key: fs.readFileSync("./server_dev.key"),
   
-  cert: fs.readFileSync("insteadq.cert")
+  cert: fs.readFileSync("./server_dev.crt")
   
   }
   
