@@ -1,0 +1,118 @@
+[
+    {
+        "id": "Bangalore",
+        "Name": "BAN",
+        "City": "Bangalore",
+        "locations":[
+            {
+                "id": "BANGECITY",
+                "address": [
+                    {
+                        "addressline1": "Building 47",
+                        "addressline2": "Terminal Building",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 13",
+                        "addressline2": "Heritage Building",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 49",
+                        "addressline2": "Innvovation Building",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    }
+                ]
+            },
+            {   "id": "BANGMNC",
+                "address": [
+                    {
+                        "addressline1": "Building 1",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 2",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 3",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Pune",
+        "Name": "PUN",
+        "City": "Pune",
+        "locations":[
+            {
+                "id": "PUNHINJEWADI",
+                "address": [
+                    {
+                        "addressline1": "Building 3",
+                        "addressline2": "Rock Building",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 7",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 8",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    }
+                ]
+            },
+            {   "id": "BANGMNC",
+                "address": [
+                    {
+                        "addressline1": "Building 1",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 2",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    },
+                    {
+                        "addressline1": "Building 3",
+                        "addressline2": "",
+                        "addressline3": "",
+                        "addressline4": ""
+                        
+                    }
+                ]
+            }
+        ]
+    }
+]

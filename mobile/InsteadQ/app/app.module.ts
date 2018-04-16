@@ -24,6 +24,8 @@ import { KioskService } from "./services/kiosks.service";
 import { FilterComponent } from "./filters/filter.component";
 import { FilterService } from "./services/filter.service";
 import { KioskItemsService } from "./services/kiosksItems.service";
+import { BackendService } from "./services/backend.service";
+import { ActionCreatorService } from "./services/Store/ActionCreators/action.creator.service";
 
 @NgModule({
     bootstrap: [
@@ -51,7 +53,9 @@ import { KioskItemsService } from "./services/kiosksItems.service";
         ItemService,
         KioskService,
         FilterService,
-        KioskItemsService
+        KioskItemsService,
+        BackendService,
+        ActionCreatorService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
