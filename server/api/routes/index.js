@@ -20,4 +20,9 @@ router.get('/test', function (req, res) {
     //ControllerQless.GetVendors(res);
 })
 
+router.get('/locations', function (req, res) {
+    ControllerQless.GetLocations(res);
+})
+
+
 module.exports = router;

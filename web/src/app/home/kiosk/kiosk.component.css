@@ -1,0 +1,33 @@
+.kioskitemdiv {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    padding-bottom: 1%;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+    position: relative;
+    border-radius: 5px;
+    /* line-height: 1.2; */
+}
+.catitemdiv {
+    padding-left: 0;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: yellowgreen;
+}
+.iqcarddiv {
+    padding-bottom: 1%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+    position: relative;
+}
+.iqcardheaderdiv {
+    padding-bottom: 1%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+    position: relative;
+}

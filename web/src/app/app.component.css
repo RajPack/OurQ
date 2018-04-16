@@ -4,120 +4,103 @@
     /* background-color: #122b3e; */
     /* background-color: #002d30; */
     background-color: #172035;
+    /* background-color: #307686; */
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    /* padding: 10px; */
+    /* background: white; */
+    position: relative;
 }
 .jumbotron {
-    min-height: 200px;
+    min-height: 100%;
+    max-height: 100%;
+    margin-bottom: 0;
 }
 .insteadQLogo {
-    position: fixed;
-    height: 70px;
-    width: 70px;
-    top: 0px;
-    left: 0px;
+    /* position: fixed; */
+    height: inherit;
+    width: inherit;
+    /* top: 0px; */
+    /* left: 0px; */
 }
-/* .col-l-offset-4 {
-    margin-left: 25%;
-}
-.col-l-6 {
-    width: 37.5%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.col-l-1, .col-l-10, .col-l-11, .col-l-12, .col-l-13, .col-l-14, .col-l-15, .col-l-16, .col-l-2, .col-l-3, .col-l-4, .col-l-5, .col-l-6, .col-l-7, .col-l-8, .col-l-9 {
-    float: left;
-}
-.col-m-offset-3 {
-    margin-left: 18.75%;
-}
-.col-m-10 {
-    width: 62.5%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-13, .col-m-14, .col-m-15, .col-m-16, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9 {
-    float: left;
-}
-.col-l-1, .col-l-10, .col-l-11, .col-l-12, .col-l-13, .col-l-14, .col-l-15, .col-l-16, .col-l-2, .col-l-3, .col-l-4, .col-l-5, .col-l-6, .col-l-7, .col-l-8, .col-l-9, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-13, .col-lg-14, .col-lg-15, .col-lg-16, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-13, .col-m-14, .col-m-15, .col-m-16, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-s-1, .col-s-10, .col-s-11, .col-s-12, .col-s-13, .col-s-14, .col-s-15, .col-s-16, .col-s-2, .col-s-3, .col-s-4, .col-s-5, .col-s-6, .col-s-7, .col-s-8, .col-s-9 {
-    position: relative;
-    min-height: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.IQLocation {
-    margin-right: -10px;
-    font-size: 1em;
-    position: relative;
-}
-.ui.large.input {
-    font-size: 1.14285714em;
-}
-
-.ui.input {
-    font-size: 1em;
-}
-.ui.input {
-    position: relative;
-    font-weight: 400;
-    font-style: normal;
-    display: -webkit-inline-box;
-    display: -moz-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    color: #33373D;
-}
-.left {
-    float: left;
-}
-.w100 {
-    width: 100%;
-}
-.ui.icon.input>i.icon:not(.link) {
-    pointer-events: none;
-}
-
-.ui[class*="left icon"].input>i.icon {
-    right: auto;
-    left: 1px;
-    border-radius: .28571429rem 0 0 .28571429rem;
-}
-.ui.icon.input>i.icon {
-    cursor: default;
-    position: absolute;
-    line-height: 1;
-    text-align: center;
+/* .apptopbarContainer {
+    /* position: fixed;
     top: 0;
-    right: 0;
-    margin: 0;
-    height: 100%;
-    width: 2.67142857em;
-    opacity: .5;
-    border-radius: 0 .28571429rem .28571429rem 0;
-    -webkit-transition: opacity .3s ease;
-    transition: opacity .3s ease;
-}
-i.small.icon, i.small.icons {
-    line-height: 1;
-    font-size: .92857143em;
-}
-i.icon, i.icons {
-    font-size: 1em;
-}
-i.icon {
-    display: inline-block;
-    opacity: 1;
-    margin: 0 .25rem 0 0;
-    width: 1.18em;
-    height: 1em;
-    font-family: zombatsregular;
-    content: attr(data-icon);
-    font-style: normal;
-    font-weight: 400;
-    text-decoration: inherit;
-    text-align: center;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    left: 0; 
+    height: 30%;
 } */
+.appsidebarContainer {
+    /* position: absolute;
+    top: 29.8%;
+    left: 0;
+    max-height: 70%;*/
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+}
+.approotClass {
+    height: 100%;
+    background-color: #f0e9ee;
+    background-color: #569376;
+    background-color: #64947C;
+}
+.bottomContainer {
+    height: 70%;
+}
+.topContainer {
+    height: 30%;
+}
+.logoContainer {
+    margin: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.appHomeContainer {
+    height: 90%;
+    min-height: 90%;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+    max-height: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    float: right;
+    margin-top: 2%;
+}
+/* #style-8::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+#style-8::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
+} */
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
