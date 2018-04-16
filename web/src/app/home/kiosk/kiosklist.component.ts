@@ -12,9 +12,9 @@ import { slideInDownAnimation } from "../../animations/animations";
 
 export class KioskListComponent implements OnInit, OnDestroy {
     kiosks: KioskModel[];
-    @HostBinding('@routeAnimation') routeAnimation = true;
-    @HostBinding('style.display') display = 'block';
-    @HostBinding('style.position') position = 'absolute';
+    // @HostBinding('@routeAnimation') routeAnimation = true;
+    // @HostBinding('style.display') display = 'block';
+    // @HostBinding('style.position') position = 'absolute';
 
     constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 
