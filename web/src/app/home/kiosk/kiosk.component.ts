@@ -18,6 +18,7 @@ export class KioskComponent implements OnInit, OnChanges {
     categorizedItems: CategorizedItem[];
     kioskObservable: Observable<KioskModel>;
     kiosk: KioskModel;
+    clickedId: any;
 
     constructor(private itemService: KioskItemsService, 
                 private router: Router,
@@ -43,5 +44,10 @@ export class KioskComponent implements OnInit, OnChanges {
 
     ngOnChanges() {
         
+    }
+
+    addBtnOperation(item: KioskItem, args) {
+        this.clickedId = args.target.id;
+        item.cartCount = (item.cartCount === undefined) ? 1 : (item.cartCount++);
     }
 }

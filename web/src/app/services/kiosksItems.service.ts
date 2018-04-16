@@ -54,7 +54,7 @@ const sampleItems = [
         category: "Breakfast"
     },
     {
-        id: "asb1",
+        id: "asb2",
         name: "Plain Dosa",
         price: 30,
         veg: true,
@@ -63,7 +63,7 @@ const sampleItems = [
         category: "Breakfast"
     },
     {
-        id: "asb1",
+        id: "asb3",
         name: "Set Dosa",
         price: 40,
         veg: true,
@@ -72,7 +72,7 @@ const sampleItems = [
         category: "Breakfast"
     },
     {
-        id: "asb1",
+        id: "asb4",
         name: "Poori",
         price: 50,
         veg: true,
@@ -81,7 +81,7 @@ const sampleItems = [
         category: "Breakfast"
     },
     {
-        id: "asb1",
+        id: "asb5",
         name: "Veg Meal",
         price: 70,
         veg: true,
@@ -90,7 +90,7 @@ const sampleItems = [
         category: "Lunch"
     },
     {
-        id: "asb1",
+        id: "asb6",
         name: "Chicken Meal",
         price: 90,
         veg: false,
@@ -99,7 +99,7 @@ const sampleItems = [
         category: "Lunch"
     },
     {
-        id: "asb1",
+        id: "asb7",
         name: "Veg Fried Rice",
         price: 50,
         veg: true,
@@ -108,7 +108,7 @@ const sampleItems = [
         category: "Lunch"
     },
     {
-        id: "asb1",
+        id: "asb8",
         name: "Chicken Fried Rice",
         price: 70,
         veg: false,
@@ -117,7 +117,7 @@ const sampleItems = [
         category: "Lunch"
     },
     {
-        id: "asb1",
+        id: "asb9",
         name: "Gobi Fry",
         price: 60,
         veg: true,
@@ -126,7 +126,7 @@ const sampleItems = [
         category: "Lunch"
     },
     {
-        id: "asb1",
+        id: "asb10",
         name: "Naan",
         price: 20,
         veg: true,
@@ -135,7 +135,7 @@ const sampleItems = [
         category: "Breads"
     },
     {
-        id: "asb1",
+        id: "asb11",
         name: "Roti",
         price: 12,
         veg: true,
@@ -144,7 +144,7 @@ const sampleItems = [
         category: "Breads"
     },
     {
-        id: "asb1",
+        id: "asb12",
         name: "Kulcha",
         price: 20,
         veg: true,
@@ -153,7 +153,7 @@ const sampleItems = [
         category: "Breads"
     },
     {
-        id: "asb1",
+        id: "asb13",
         name: "Veg Roll",
         price:50,
         veg: true,
@@ -162,7 +162,7 @@ const sampleItems = [
         category: "Rolls"
     },
     {
-        id: "asb1",
+        id: "asb14",
         name: "Paneer Rool",
         price:60,
         veg: true,
@@ -171,7 +171,7 @@ const sampleItems = [
         category: "Rolls"
     },
     {
-        id: "asb1",
+        id: "asb15",
         name: "Chicken Roll",
         price:60,
         veg: false,
@@ -180,7 +180,7 @@ const sampleItems = [
         category: "Rolls"
     },
     {
-        id: "asb1",
+        id: "asb16",
         name: "Chocolate IceCream",
         price: 60,
         veg: true,
@@ -189,7 +189,7 @@ const sampleItems = [
         category: "Deserts"
     },
     {
-        id: "asb1",
+        id: "asb17",
         name: "Vanilla IceCream",
         price:50,
         veg: true,
@@ -198,7 +198,7 @@ const sampleItems = [
         category: "Deserts"
     },
     {
-        id: "asb1",
+        id: "asb18",
         name: "ButterStoch IceCream",
         price:60,
         veg: true,
@@ -207,7 +207,7 @@ const sampleItems = [
         category: "Deserts"
     },
     {
-        id: "asb1",
+        id: "asb19",
         name: "Falooda",
         price:70,
         veg: true,
@@ -216,7 +216,7 @@ const sampleItems = [
         category: "Deserts"
     },
     {
-        id: "asb1",
+        id: "asb101",
         name: "Jamoon",
         price:15,
         veg: true,
@@ -225,7 +225,7 @@ const sampleItems = [
         category: "Sweets"
     },
     {
-        id: "asb1",
+        id: "asb102",
         name: "Rasagolla",
         price:20,
         veg: true,
@@ -234,7 +234,7 @@ const sampleItems = [
         category: "Sweets"
     },
     {
-        id: "asb1",
+        id: "asb103",
         name: "Fish Meal",
         price:100,
         veg: false,
@@ -243,7 +243,7 @@ const sampleItems = [
         category: "Dinner"
     },
     {
-        id: "asb1",
+        id: "asb104",
         name: "Chicken Kebab",
         price:90,
         veg: false,
@@ -252,7 +252,7 @@ const sampleItems = [
         category: "Dinner"
     },
     {
-        id: "asb1",
+        id: "asb105",
         name: "Chicken Tandoori",
         price:90,
         veg: false,

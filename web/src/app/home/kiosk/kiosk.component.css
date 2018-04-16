@@ -10,6 +10,9 @@
     position: relative;
     border-radius: 5px;
     /* line-height: 1.2; */
+    background-color: #fff;
+    /* background-color: rgba(0,0,0,.03); */
+    /* background-color: #a0db8e; */
 }
 .catitemdiv {
     padding-left: 0;
@@ -30,4 +33,61 @@
     padding: 10px;
     background: white;
     position: relative;
+}
+.ibutton {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #E0E1E2;
+    color: rgba(0,0,0,.6);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    margin: 0 .25em 0 0;
+    padding: .78571429em 1.5em;
+    text-transform: none;
+    text-shadow: none;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 #e7e7e7 inset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background .1s ease 0s;
+    transition: background .1s ease 0s;
+}
+.itemaddbtn {
+    /* background-color: #EEEEEE;
+    padding: 8px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px; */
+    /* float: right; */
+    box-shadow: 0 0 0 1px #099E44 inset!important;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 6px 25px;
+    text-transform: uppercase;
+    margin-right: 0;
+    border: 0;
+    cursor:pointer;
+    background-color: transparent;
+    font-family: sans-serif;
+}
+a.itemaddbtn.ibutton:hover {
+    /* background: #457725;
+    background: #a2b398;
+    background: #79a196; */
+    background: #2f9254;
+    /* background: #569376; */
+    transition: background .1s ease 0s;
+    color: white;
+    font-weight: 600;
 }

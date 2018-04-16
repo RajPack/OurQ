@@ -1,7 +1,5 @@
-<div class="col-8 kioskitemdiv" 
-     style="font-family: serif; background-color: #a0db8e;">
-    <div class="card col-12 iqcardheaderdiv" 
-         style="display: -webkit-inline-box; padding: 1%; 
+<div class="col-8 kioskitemdiv" style="font-family: serif;">
+    <div class="card col-12 iqcardheaderdiv" style="display: -webkit-inline-box; padding: 1%; 
         background: transparent; margin-bottom: 1%;">
         <div class="col-10" style="padding: 1%;">
             <div class="col-12" style="font-weight: 600;">{{ kiosk.name }}</div>
@@ -17,55 +15,67 @@
         </div>
     </div>
     <div class="col-12" style="padding-left: 0;">
-    <div *ngFor="let categoryitem of categorizedItems" class="col-12">
-        <div class="col-12" style="font-weight: 600; font-size: larger;">
-            {{ categoryitem.name }}
-        </div>
-        <div class="card iqcarddiv col-12" style="padding-left: 0;
+        <div *ngFor="let categoryitem of categorizedItems" class="col-12">
+            <div class="col-12" style="font-weight: 600; font-size: larger;">
+                {{ categoryitem.name }}
+            </div>
+            <div class="card iqcarddiv col-12" style="padding-left: 0;
         background-color: aliceblue;">
-            <div *ngFor="let item of categoryitem.items" class="col-12">
-                <div class="col-12" style="font-weight: 600;">
-                    <span *ngIf="item.veg">
-                        <img src="../assets/images/veg.png" style="height: 3%; width: 3%;">
-                    </span>
-                    <span *ngIf="!item.veg">
-                        <img src="../assets/images/non_veg.png" style="height: 3%; width: 3%;">
-                    </span>
-                    <span>
-                        {{ item.name }}
-                    </span>
-                </div>
-                <div class="col-12" style="display: inline-flex;">
-                    <div class="col-10" style="padding-left: 0;">
-                        <div class="col-12">
-                            <span class="col-1" style="padding-right: 0;">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                            </span>
-                            <span class="col-11" style="padding-left: 0;">
-                                {{ item.price }}
-                            </span>
-                        </div>
-                        <div class="col-12" style="color: tomato; 
+                <div *ngFor="let item of categoryitem.items" class="col-12">
+                    <div class="col-12" style="font-weight: 600;">
+                        <span *ngIf="item.veg">
+                            <img src="../assets/images/veg.png" style="height: 3%; width: 3%;">
+                        </span>
+                        <span *ngIf="!item.veg">
+                            <img src="../assets/images/non_veg.png" style="height: 3%; width: 3%;">
+                        </span>
+                        <span>
+                            {{ item.name }}
+                        </span>
+                    </div>
+                    <div class="col-12" style="display: inline-flex;">
+                        <div class="col-10" style="padding-left: 0;">
+                            <div class="col-12">
+                                <span class="col-1" style="padding-right: 0;">
+                                    <i class="fa fa-inr" aria-hidden="true"></i>
+                                </span>
+                                <span class="col-11" style="padding-left: 0;">
+                                    {{ item.price }}
+                                </span>
+                            </div>
+                            <div class="col-12" style="color: tomato; 
                                     font-size: small; 
                                     padding-left: 30px;" *ngIf="item.additionalInfo!==''">
-                            {{ item.additionalInfo }}
+                                {{ item.additionalInfo }}
+                            </div>
+                            <div class="col-12" style="font-size: small;">
+                                <span *ngIf="item.servingNow" style="color:darkgreen; padding-left: 16px;">
+                                    Serving Now
+                                </span>
+                                <span *ngIf="!item.servingNow" style="color:crimson; padding-left: 16px;">
+                                    Closed
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-12" style="font-size: small;">
-                            <span *ngIf="item.servingNow" style="color:darkgreen; padding-left: 16px;">
-                                Serving Now
-                            </span>
-                            <span *ngIf="!item.servingNow" style="color:crimson; padding-left: 16px;">
-                                Closed
-                            </span>
+                        <div class="col-2" style="padding-right: 0;">
+                            <a *ngIf="item.servingNow && 
+                                      (item.cartCount === undefined || item.cartCount === 0)" 
+                                      class="itemaddbtn ibutton"
+                                [id]="item.id" (click)="addBtnOperation(item, $event)">
+                                Add
+                            </a>
+                            <div *ngIf="item.cartCount > 0" 
+                                  style="display: inline-flex; padding: 0;"
+                                  class="col-3">
+                                <button type="button" class="itempostaddbtn ipostaddbutton col-1">-</button>
+                                <input type="text" readonly="true" class="col-10">
+                                <button type="button" class="btn col-1">+</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-2" style="padding-right: 0;">
-                        button
                     </div>
                 </div>
             </div>
+            <br>
         </div>
-        <br>
-    </div>
     </div>
 </div>
