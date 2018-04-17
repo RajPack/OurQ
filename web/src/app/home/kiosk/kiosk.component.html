@@ -61,14 +61,15 @@
                             <a *ngIf="item.servingNow && 
                                       (item.cartCount === undefined || item.cartCount === 0)" 
                                       class="itemaddbtn ibutton"
-                                [id]="item.id" (click)="addBtnOperation(item, $event)">
+                                [id]="'additembtn_'+item.id" (click)="addBtnOperation(item, $event)">
                                 Add
                             </a>
                             <div *ngIf="item.cartCount > 0" 
                                   style="display: inline-flex; padding: 0;"
-                                  class="col-3">
+                                  class="col-3"
+                                  [id]="'additempm_'+item.id">
                                 <button type="button" class="itempostaddbtn ipostaddbutton col-1">-</button>
-                                <input type="text" readonly="true" class="col-10">
+                                <span class="col-10">{{ item.cartCount }}</span>
                                 <button type="button" class="btn col-1">+</button>
                             </div>
                         </div>

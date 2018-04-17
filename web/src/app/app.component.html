@@ -1,5 +1,5 @@
-<div class="approotClass">
-  <div class="container topContainer col-12">
+<div class="approotClass" (window:scroll)="showMiniBar($event)">
+  <div class="container topContainer col-12" id="topbar">
     <div class="jumbotron topbar col-12" style="display: inline-flex;">
       <div class="container logoContainer col-1" style="margin-top: 0.5%;">
         <img src="./assets/images/logo.png" class="rounded float-left insteadQLogo" alt="...">
@@ -8,6 +8,9 @@
         <app-topbar></app-topbar>
       </div>
     </div>
+  </div>
+  <div *ngIf="showMinimalSearch" class="container topContainer fixedTopBar col-12">
+        <app-topbar [showMinimalSearch]="showMinimalSearch"></app-topbar>
   </div>
   <div class="container bottomContainer col-12">
     <div class="container appsidebarContainer col-2">

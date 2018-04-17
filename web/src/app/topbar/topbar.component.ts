@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
     selector: 'app-topbar',
@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class TopBarComponent implements OnInit {
-
+    @Input() showMinimalSearch: boolean;
     constructor() {
 
     }
