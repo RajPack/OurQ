@@ -49,10 +49,14 @@
                                 {{ item.additionalInfo }}
                             </div>
                             <div class="col-12" style="font-size: small;">
-                                <span *ngIf="item.servingNow" style="color:darkgreen; padding-left: 16px;">
+                                <span *ngIf="item.servingNow" 
+                                      style="color:darkgreen; padding-left: 16px;"
+                                      class="col-12">
                                     Serving Now
                                 </span>
-                                <span *ngIf="!item.servingNow" style="color:crimson; padding-left: 16px;">
+                                <span *ngIf="!item.servingNow" 
+                                       style="color:crimson; padding-left: 16px;"
+                                       class="col-12">
                                     Closed
                                 </span>
                             </div>
@@ -68,9 +72,19 @@
                                   style="display: inline-flex; padding: 0;"
                                   class="col-3"
                                   [id]="'additempm_'+item.id">
-                                <button type="button" class="itempostaddbtn ipostaddbutton col-1">-</button>
-                                <span class="col-10">{{ item.cartCount }}</span>
-                                <button type="button" class="btn col-1">+</button>
+                                <div class="col-1">
+                                    <button type="button" 
+                                            class="btn btn-info 
+                                                   itempostaddbtn 
+                                                   ipostaddbutton 
+                                                   col-12">-</button>
+                                </div>
+                                <div class="col-10">
+                                    {{ item.cartCount }}
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-info col-12">+</button>
+                                </div>
                             </div>
                         </div>
                     </div>
