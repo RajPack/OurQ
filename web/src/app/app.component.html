@@ -1,17 +1,20 @@
 <div class="approotClass" (window:scroll)="showMiniBar($event)">
   <div class="container topContainer col-12" id="topbar">
     <div class="jumbotron topbar col-12" style="display: inline-flex;">
-      <div class="container logoContainer col-1" style="margin-top: 0.5%;">
+      <div class="container logoContainer col-1" 
+           style="margin-top: 0.5%;"
+           id="topbarlogocontainer"
+           *ngIf="!showMinimalSearch">
         <img src="./assets/images/logo.png" class="rounded float-left insteadQLogo" alt="...">
       </div>
-      <div class="container apptopbarContainer col-11">
-        <app-topbar></app-topbar>
+      <div class="container apptopbarContainer col-11" id="topbarSearchcontainer">
+        <app-topbar [showMinimalSearch]></app-topbar>
       </div>
     </div>
   </div>
-  <div *ngIf="showMinimalSearch" class="container topContainer fixedTopBar col-12">
+  <!-- <div *ngIf="showMinimalSearch" class="container topContainer fixedTopBar col-12">
         <app-topbar [showMinimalSearch]="showMinimalSearch"></app-topbar>
-  </div>
+  </div> -->
   <div class="container bottomContainer col-12">
     <div class="container appsidebarContainer col-2">
       <app-sidebar></app-sidebar>

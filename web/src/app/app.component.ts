@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showMinimalSearch: boolean = false;
+  
   showMiniBar(){
-    console.log(this.isInViewport("topbar"));
     this.showMinimalSearch= this.isInViewport("topbar") ? false: true;
+
+    console.log(this.showMinimalSearch);
+
+    let elem = document.getElementById('topbarSearch');
+    this.showMinimalSearch ? 
+      elem.classList.add("fixedTopBar") : 
+      elem.classList.remove("fixedTopBar");
+
+    let elemSearch = document.getElementById('topsearchbarcontainer');
+    this.showMinimalSearch ? 
+      elemSearch.classList.add("topsearchbarstyle") : 
+      elemSearch.classList.remove("topsearchbarstyle");
+
+    let elemSearchCont = document.getElementById("topbarSearchcontainer");
+    if(this.showMinimalSearch){
+      elemSearchCont.classList.remove("col-11");
+      elemSearchCont.classList.add("col-12");
+    }else{
+      elemSearchCont.classList.remove("col-12");
+      elemSearchCont.classList.add("col-11");
+    }
   }
 
 

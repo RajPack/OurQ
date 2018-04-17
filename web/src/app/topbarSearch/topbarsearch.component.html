@@ -1,6 +1,6 @@
 <div class="container searchbarContainer col-12" 
-     style="margin-top: 6%; margin-bottom: 2%;">
-    <div class="col-5">
+     style="margin-top: 6%; margin-bottom: 2%;" id="topsearchbarcontainer">
+    <div *ngIf="!showMinimalSearch" class="col-5">
         <form [formGroup]="topbarLocationForm" 
               (ngSubmit)="onSubmit()" 
               class="form-group">

@@ -1,6 +1,83 @@
 <div class="col-12" style="padding-right: 0;">
-    <app-topbar-login *ngIf="!showMinimalSearch"></app-topbar-login>
-    <br>
-    <br>
-    <app-topbar-search></app-topbar-search>
+    <div class="col-12" style="padding: 0;" *ngIf="!showMinimalSearch">
+        <!-- <app-topbar-login></app-topbar-login> -->
+        <div class="container loginbarContainer col-12" style="margin-top: 1%;">
+            <span class="iquserbar col-3">
+                <span class="iqusericon col-3" style="cursor: pointer;">
+                    <div class="iqusericonimage col-12">
+                        <i class="fa fa-user-circle fa-login" aria-hidden="true"></i>
+                    </div>
+                    <div class="iqusericonname col-12">
+                        Login
+                    </div>
+                </span>
+                <span class="iqblankspace col-1">
+
+                </span>
+                <span class="iqorderbasket col-3" style="cursor: pointer;">
+                    <div class="iqusericonimage col-12">
+                        <i class="fa fa-shopping-basket fa-login" aria-hidden="true"></i>
+                    </div>
+                    <div class="iqusericonname col-12">
+                        Orders
+                    </div>
+                </span>
+                <span class="iqblankspace col-1">
+
+                </span>
+                <span class="iqshoppingcart col-3" style="cursor: pointer;">
+                    <div class="iqusericonimage col-12" style="margin-left: 1px;">
+                        <i class="fa fa-shopping-cart fa-login" aria-hidden="true"></i>
+                    </div>
+                    <div class="iqusericonname col-12">
+                        Cart
+                    </div>
+                </span>
+            </span>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="col-12" style="padding: 0;" id="topbarSearch">
+        <!-- <app-topbar-search [showMinimalSearch]="showMinSearch"></app-topbar-search> -->
+        <div class="container searchbarContainer col-12" style="margin-top: 6%; margin-bottom: 2%;" id="topsearchbarcontainer">
+            <div *ngIf="!showMinimalSearch" class="col-6">
+                <form [formGroup]="topbarLocationForm" (ngSubmit)="onSubmit()" class="form-group">
+                    <div class="iqlocationdiv col-12" style="padding: 0; display: inline-flex">
+                        <div class="iqLocationSpanIcon iqLocationPadding col-1">
+                            <i class="fa fa-street-view fa-searchbar" aria-hidden="true"></i>
+                        </div>
+                        <div class="iqLocationSpanInput iqLocationPadding col-7">
+                            <input type="text" id="iqLocationInput" class="iqLocationInput" formControlName="location" placeholder="Type your location here...">
+                        </div>
+                        <div class="iqLocationSpanButton iqLocationPadding col-3">
+                            <button type="submit" class="btn btn-info" style="margin-top: 5%; width: 100%;">
+                                <span style="width: 100%;">Detect
+                                    <i class="fa fa-crosshairs myIcn fa-searchbar" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <span></span> -->
+            <div class="col-6">
+                <form [formGroup]="topbarSearchForm" (ngSubmit)="onSubmit()" class="form-group">
+                    <div class="iqsearchdiv col-12" style="padding: 0; display: inline-flex;">
+                        <div class="iqLocationSpanIcon iqLocationPadding col-1">
+                            <i class="fa fa-search fa-searchbar" aria-hidden="true"></i>
+                        </div>
+                        <div class="iqLocationSpanInput iqLocationPadding col-8">
+                            <input type="text" id="iqSearchInput" class="iqSearchInput" formControlName="search" placeholder="Search here...">
+                        </div>
+                        <div class="iqLocationSpanButton iqLocationPadding col-2">
+                            <button type="submit" [disabled]="!topbarSearchForm.valid" class="btn btn-info mysearchbtn">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

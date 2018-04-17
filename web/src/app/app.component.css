@@ -14,8 +14,10 @@
 .fixedTopBar{
     position: fixed;
     z-index: 5;
-    top: 0px;
-
+    top: 0;
+    background-color: #172035;
+    /* max-width: 10.6% !important;
+    margin-top: 0 !important; */
 }
 .jumbotron {
     height: auto;

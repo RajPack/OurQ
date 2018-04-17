@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
@@ -10,9 +10,11 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class TopBarSearchComponent implements OnInit {
     topbarSearchForm: FormGroup;
     topbarLocationForm: FormGroup;
+    @Input() showMinimalSearch: boolean;
 
     constructor(private fb: FormBuilder) {
         this.initiateForm();
+        console.log('searchcomponrnt'+this.showMinimalSearch);
     }
 
     ngOnInit() {
