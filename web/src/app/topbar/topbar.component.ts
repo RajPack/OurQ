@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, OnChanges } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
+import { Router, NavigationEnd, Event } from "@angular/router";
+import { GenericService } from "../services/generic.service";
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-topbar',
@@ -7,17 +10,25 @@ import { FormGroup, Validators, FormBuilder } from "@angular/forms";
     styleUrls: ['./topbar.component.css']
 })
 
-export class TopBarComponent implements OnInit {
+export class TopBarComponent implements OnInit, OnChanges {
     topbarSearchForm: FormGroup;
     topbarLocationForm: FormGroup;
     @Input() showMinimalSearch: boolean;
-    
-    constructor(private fb: FormBuilder) {
+    searchPlaceHolderVal: string;
+    isHomePage: boolean;
+    styledata: any;
+
+    constructor(private fb: FormBuilder, private service: GenericService) {
         this.initiateForm();
+
+        this.service.placeholderObs.subscribe((value: boolean) => {
+            this.isHomePage = !value;
+            this.searchBarActivity();
+        });
     }
 
     ngOnInit() {
-       console.log("dd"+this.showMinimalSearch);
+
     }
 
     onSubmit() {
@@ -35,5 +46,18 @@ export class TopBarComponent implements OnInit {
         this.topbarLocationForm = this.fb.group({
             location: ['', Validators.required]
         });
+    }
+
+    ngOnChanges() {
+        console.log("Top Bar Component changed");
+    }
+
+    searchBarActivity() {
+        (this.isHomePage) ? this.searchPlaceHolderVal = "Search here..." :
+            this.searchPlaceHolderVal = "Search Menu here...";
+        
+        (this.isHomePage) ? (this.styledata = {'margin-top': '5%', 'margin-bottom': '2%'}) :
+                (this.styledata = {'margin-top': '5%', 'margin-bottom': '2%', 'margin-left': '10%'});
+        console.log("what" + this.styledata);
     }
 }

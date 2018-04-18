@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideBarAppModule } from './insteadQModules/sidebar.module';
 import { HomeAppModule } from './insteadQModules/home.module';
 import { HomeRouterAppModule } from './insteadQModules/home-router.module';
+import { GenericService } from './services/generic.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HomeRouterAppModule } from './insteadQModules/home-router.module';
     HomeAppModule,
     HomeRouterAppModule
   ],
-  providers: [],
+  providers: [GenericService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

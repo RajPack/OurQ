@@ -1,7 +1,10 @@
-import { Component, OnInit, HostBinding, style, OnDestroy } from "@angular/core";
+import { Component, OnInit, HostBinding, style, OnDestroy, Output } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { KioskModel } from "../../models/kioskModel";
 import { slideInDownAnimation } from "../../animations/animations";
+import { EventEmitter } from "@angular/core";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { GenericService } from "../../services/generic.service";
 
 @Component({
     selector: 'app-kiosklist',
@@ -16,18 +19,20 @@ export class KioskListComponent implements OnInit, OnDestroy {
     // @HostBinding('style.display') display = 'block';
     // @HostBinding('style.position') position = 'absolute';
 
-    constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-
+    constructor(private router: Router, 
+                private activatedRoute: ActivatedRoute,
+                private service: GenericService) {
+        this.service.getSearchPlaceHolderValue(false);
     }
 
     ngOnInit() {
         this.activatedRoute.data.subscribe((val) => {
-            console.log(val);
             this.kiosks = val.kiosks;
-        })
+        });        
     }
 
     ngOnDestroy() {
-        console.log('destroyed');
+        console.log('Kiosk list component destroyed');
     }
+
 }
