@@ -17,7 +17,7 @@ export class TopBarComponent implements OnInit {
     }
 
     ngOnInit() {
-       
+       console.log("dd"+this.showMinimalSearch);
     }
 
     onSubmit() {

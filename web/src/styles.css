@@ -32,7 +32,7 @@
             /* display: block !important; */
        /* }
        } */
-@media only screen and (max-width: 1300px) and (min-width: 0px) {
+@media only screen and (max-width: 992px) and (min-width: 0px) {
     body {
         overflow-y: visible !important;
         overflow-x: visible !important;
@@ -49,6 +49,7 @@
     }
     .mysearchbtn {
         margin: 0 !important;
+        width: 100% !important;
     }
     .insteadQLogo {
         display: none;
@@ -68,9 +69,34 @@
     /* .logincontainerdisplay {
         margin-left: 5% !important;
     } */
+    .iqLocationSpanIcon {
+        display: none !important;
+    }
+    .sidebarfiltericon {
+        display: none !important;
+    }
+    .sidebarvegonlylabel {
+        margin-left: 0 !important;
+    }
+    .myIcn {
+        display: none !important;
+    }
 }
-@media only screen and (max-width: 1300px) and (min-width: 769px) {
+/* @media only screen and (max-width: 1200px) and (min-width: 769px) {
     [class*="col-"] {
         padding: 1% !important;
     }
+} */
+/* @media only screen and (max-width: 992px) and (min-width: 769px) {
+    .mysearchbtn {
+        width: 110% !important;
+    }
 }
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+    .myIcn {
+        display: none !important;
+    }
+    .mysearchbtn {
+        width: 100% !important;
+    }
+} */

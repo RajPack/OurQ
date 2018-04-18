@@ -49,13 +49,13 @@
 /*Search Styling starts*/
 .fa-searchbar {
     font-size: 30px !important;
-    padding-left: 13%;
+    padding-left: 1%;
     padding-top: 1%;
     opacity: .5;
     /* color: #f8f9fa !important; */
 }
 .myIcn {
-    font-size: inherit !important;
+    font-size: 15px !important;
 }
 .iqsearchdiv {
     background-color: #f8f9fa !important;
@@ -145,8 +145,8 @@
 }
 .mysearchbtn {
     margin-top: 4%;
-    margin-left: 8%;
-    width: 100%;
+    margin-left: 0;
+    width: 110%;
 }
 .topsearchbarstyle {
     margin-top: 2% !important;
