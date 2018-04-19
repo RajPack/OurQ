@@ -15,15 +15,8 @@ const homeRoutes: Routes = [
     },
     {
         path: 'home', 
-        component: KioskListComponent,
+        component: HomeComponent,
         resolve: { kiosks: KioskListResolver }
-        // children: [
-        //     {
-        //         path: ':id', 
-        //         component: KioskComponent,
-        //         resolve: { kiosk: KioskItemResolver }
-        //     }
-        // ]
     },
     {
         path: 'kiosk/:id',

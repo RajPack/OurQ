@@ -4,7 +4,6 @@ import { KioskModel } from "../../models/kioskModel";
 import { slideInDownAnimation } from "../../animations/animations";
 import { EventEmitter } from "@angular/core";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { GenericService } from "../../services/generic.service";
 
 @Component({
     selector: 'app-kiosklist',
@@ -20,9 +19,8 @@ export class KioskListComponent implements OnInit, OnDestroy {
     // @HostBinding('style.position') position = 'absolute';
 
     constructor(private router: Router, 
-                private activatedRoute: ActivatedRoute,
-                private service: GenericService) {
-        this.service.getSearchPlaceHolderValue(false);
+                private activatedRoute: ActivatedRoute) {
+
     }
 
     ngOnInit() {

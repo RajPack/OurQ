@@ -7,8 +7,6 @@ import { TopBarAppModule } from './insteadQModules/topbar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SideBarAppModule } from './insteadQModules/sidebar.module';
 import { HomeAppModule } from './insteadQModules/home.module';
-import { HomeRouterAppModule } from './insteadQModules/home-router.module';
-import { GenericService } from './services/generic.service';
 
 @NgModule({
   declarations: [
@@ -18,12 +16,11 @@ import { GenericService } from './services/generic.service';
     BrowserAnimationsModule,
     BrowserModule,
     NgbModule.forRoot(),
-    TopBarAppModule,
-    SideBarAppModule,
     HomeAppModule,
-    HomeRouterAppModule
+    TopBarAppModule,
+    SideBarAppModule
   ],
-  providers: [GenericService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

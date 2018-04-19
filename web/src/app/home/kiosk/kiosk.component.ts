@@ -6,7 +6,6 @@ import { KioskModel } from "../../models/kioskModel";
 import { KioskService } from "../../services/kiosks.service";
 import 'rxjs/add/operator/switchMap';
 import { Observable } from "rxjs/Observable";
-import { GenericService } from "../../services/generic.service";
 
 @Component({
     selector: 'app-kiosk',
@@ -24,9 +23,8 @@ export class KioskComponent implements OnInit, OnChanges, OnDestroy {
     constructor(private itemService: KioskItemsService, 
                 private router: Router,
                 private route: ActivatedRoute,
-                private kioskService: KioskService,
-                private genericService: GenericService) {
-        this.genericService.getSearchPlaceHolderValue(true);
+                private kioskService: KioskService) {
+        
     }
 
     ngOnInit() {

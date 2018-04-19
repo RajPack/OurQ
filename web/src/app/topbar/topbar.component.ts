@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
-import { Router, NavigationEnd, Event } from "@angular/router";
-import { GenericService } from "../services/generic.service";
+import { Router, NavigationEnd, Event, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/filter';
 
 @Component({
     selector: 'app-topbar',
@@ -18,13 +18,19 @@ export class TopBarComponent implements OnInit, OnChanges {
     isHomePage: boolean;
     styledata: any;
 
-    constructor(private fb: FormBuilder, private service: GenericService) {
+    constructor(private fb: FormBuilder, private router: Router) {
         this.initiateForm();
 
-        this.service.placeholderObs.subscribe((value: boolean) => {
-            this.isHomePage = !value;
-            this.searchBarActivity();
+        this.router.events.filter((event) => {
+            return (event instanceof NavigationEnd) ? true : false;
+        }).subscribe((event: NavigationEnd) => {
+            console.log(event.url);
+            this.isHomePage = (event.url.indexOf('/home') === 0) ? true : false;
+            this.searchPlaceHolderVal = (event.url.indexOf('/kiosk/') === 0) ? 
+                                        "Search Menu here..." : 
+                                        "Search Counters & Dishes here...";
         });
+
     }
 
     ngOnInit() {
@@ -50,14 +56,5 @@ export class TopBarComponent implements OnInit, OnChanges {
 
     ngOnChanges() {
         console.log("Top Bar Component changed");
-    }
-
-    searchBarActivity() {
-        (this.isHomePage) ? this.searchPlaceHolderVal = "Search here..." :
-            this.searchPlaceHolderVal = "Search Menu here...";
-        
-        (this.isHomePage) ? (this.styledata = {'margin-top': '5%', 'margin-bottom': '2%'}) :
-                (this.styledata = {'margin-top': '5%', 'margin-bottom': '2%', 'margin-left': '10%'});
-        console.log("what" + this.styledata);
     }
 }

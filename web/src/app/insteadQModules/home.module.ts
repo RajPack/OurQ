@@ -32,7 +32,8 @@ import { KioskItemsService } from "../services/kiosksItems.service";
         KioskListComponent,
         KioskComponent,
         SearchListComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        HomeRouterAppModule
     ]
 })
 

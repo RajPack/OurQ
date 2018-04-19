@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { FilterService } from "../../services/filter.service";
 import { Observable } from "rxjs/Observable";
 import { Filter, FilterOptions } from "../../models/filterModel";
-import { GenericService } from "../../services/generic.service";
 
 @Component({
     selector: 'app-filter',
@@ -14,11 +13,8 @@ export class FilterComponent implements OnInit {
     filterListObservable: Observable<Filter[]>
     isHomePage: boolean;
 
-    constructor(private service: FilterService, 
-                private genService: GenericService) {
-        this.genService.placeholderObs.subscribe((val: boolean) => {
-            this.isHomePage = !val;
-        });   
+    constructor(private service: FilterService) {
+          
     }
 
     ngOnInit() {

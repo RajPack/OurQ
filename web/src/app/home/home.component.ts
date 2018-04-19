@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from "@angular/core";
-import { GenericService } from "../services/generic.service";
+import { ActivatedRoute, Router, Event } from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -9,8 +9,8 @@ import { GenericService } from "../services/generic.service";
 
 export class HomeComponent implements OnInit, OnChanges {
 
-    constructor(private service: GenericService) {
-       
+    constructor() {
+        
     }
 
     ngOnInit() {
