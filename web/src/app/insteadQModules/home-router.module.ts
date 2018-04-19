@@ -16,12 +16,18 @@ const homeRoutes: Routes = [
     {
         path: 'home', 
         component: HomeComponent,
-        resolve: { kiosks: KioskListResolver }
+        resolve: { kiosks: KioskListResolver },
+        data: {
+            breadCrumb: "Home"
+        }
     },
     {
         path: 'kiosk/:id',
         component: KioskComponent,
-        resolve: { kiosk: KioskItemResolver }
+        resolve: { kiosk: KioskItemResolver },
+        data: {
+            breadCrumb: "Kiosk"
+        }
     },
     {
         path: 'searchresult',

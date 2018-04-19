@@ -16,7 +16,6 @@ export class TopBarComponent implements OnInit, OnChanges {
     @Input() showMinimalSearch: boolean;
     searchPlaceHolderVal: string;
     isHomePage: boolean;
-    styledata: any;
 
     constructor(private fb: FormBuilder, private router: Router) {
         this.initiateForm();
@@ -24,8 +23,9 @@ export class TopBarComponent implements OnInit, OnChanges {
         this.router.events.filter((event) => {
             return (event instanceof NavigationEnd) ? true : false;
         }).subscribe((event: NavigationEnd) => {
-            console.log(event.url);
-            this.isHomePage = (event.url.indexOf('/home') === 0) ? true : false;
+            this.isHomePage = (event.url.indexOf('/home') === 0) ? 
+                true : ((event.urlAfterRedirects.indexOf('/home') === 0) ?
+                            true : false);
             this.searchPlaceHolderVal = (event.url.indexOf('/kiosk/') === 0) ? 
                                         "Search Menu here..." : 
                                         "Search Counters & Dishes here...";

@@ -7,10 +7,12 @@ import { TopBarAppModule } from './insteadQModules/topbar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SideBarAppModule } from './insteadQModules/sidebar.module';
 import { HomeAppModule } from './insteadQModules/home.module';
+import { BreadCrumbComponent } from './breadCrumbs/breadcrumb.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BreadCrumbComponent
   ],
   imports: [
     BrowserAnimationsModule,
