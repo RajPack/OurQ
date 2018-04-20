@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from "@angular/core";
+import { Component, OnInit, Input, OnChanges, ViewEncapsulation } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Router, NavigationEnd, Event, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
@@ -7,7 +7,8 @@ import 'rxjs/add/operator/filter';
 @Component({
     selector: 'app-topbar',
     templateUrl: './topbar.component.html',
-    styleUrls: ['./topbar.component.css']
+    styleUrls: ['./topbar.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class TopBarComponent implements OnInit, OnChanges {
@@ -56,5 +57,9 @@ export class TopBarComponent implements OnInit, OnChanges {
 
     ngOnChanges() {
         console.log("Top Bar Component changed");
+    }
+
+    autoCompleteCallback1(selecteddata: any) {
+        console.log(selecteddata);
     }
 }

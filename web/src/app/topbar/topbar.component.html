@@ -50,7 +50,13 @@
                             <i class="fa fa-street-view fa-searchbar" aria-hidden="true"></i>
                         </div>
                         <div class="iqLocationSpanInput iqLocationPadding col-8">
-                            <input type="text" id="iqLocationInput" class="iqLocationInput" formControlName="location" placeholder="Type your location here...">
+                            <!-- <input type="text" 
+                                   id="iqLocationInput" 
+                                   class="iqLocationInput" 
+                                   formControlName="location" 
+                                   placeholder="Type your location here..."> -->
+                            <ng4geo-autocomplete 
+                                (componentCallback)= "autoCompleteCallback1($event)"></ng4geo-autocomplete>
                         </div>
                         <div class="iqLocationSpanButton iqLocationPadding col-2">
                             <button type="submit" class="btn btn-info mysearchbtn" style="margin-top: 3%;">
