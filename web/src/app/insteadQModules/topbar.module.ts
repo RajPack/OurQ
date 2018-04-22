@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TopBarComponent } from "../topbar/topbar.component";
 import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+import { GeoLocationService } from "../services/geolocation.service";
 
 @NgModule({
     imports: [
@@ -14,7 +15,7 @@ import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
     declarations: [
         TopBarComponent
     ],
-    providers: [],
+    providers: [GeoLocationService],
     exports: [
         TopBarComponent,
     ]

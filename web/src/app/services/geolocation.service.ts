@@ -1,27 +1,60 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { AsyncSubject } from 'rxjs/AsyncSubject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observer } from 'rxjs/Observer';
+
 declare const google: any;
 
 @Injectable()
-
 export class GeoLocationService {
-
-    locationRetriever() {
-        navigator.geolocation.getCurrentPosition((data)=>{
-            let geocoder = new google.maps.Geocoder();
-            let latlang = new google.maps.LatLng(data.coords.latitude, 
-                                data.coords.longitude);
-            geocoder.geocode({latLng: latlang}, function(results, status){
-                console.log(results[0].address_components[5].long_name);
-                console.log(status);
-                console.log(latlang);
-                console.log(data.coords.latitude);
-                console.log(data);
-            })
-            })
+    private locationData: any;
+    private geoCoder: any;
+    locationMap = {
+        bengaluru: [{ name: 'Bengaluru DC' },
+                    { name: 'Bengaluru MNC' },
+                    { name: 'Bengaluru Continental' }],
+        pune: [{ name: 'Pune DC' },
+               { name: 'Mumbai DC' }]
     }
-}
+   
+    constructor() {
 
-const locationMap = {
-    bengaluru: ['Bengaluru DC', 'Bengaluru MNC', 'Bengaluru Continental']
+    }
+
+    locationRetriever(): Observable<any> {
+
+        return Observable.create((observer => {
+            if(window.navigator && window.navigator.geolocation){
+                window.navigator.geolocation.getCurrentPosition((data) => {
+                    observer.next(data);
+                    observer.complete();
+                })
+            }else {
+                observer.error('Unsupported Browser');
+            }
+        }));
+    }
+
+    geoCodelatlang(callback, data) {
+        let latlang = new google.maps.LatLng(data.coords.latitude, data.coords.longitude);
+        if(this.geoCoder){
+            this.geoCoder.geocode({ latLng: latlang }, function (results, status) {
+                if(status === google.maps.GeocoderStatus.OK) {
+                    if(results[0]) {
+                        console.log(results);
+                        callback(results[0]);
+                    }else {
+                        console.log('No Result Found');
+                        callback(["No results found"])
+                    }
+                }else {
+                    console.log('Failed');
+                    callback(["Geocoder failed due to: " + status]);
+                }
+            });
+        }
+    }
 }
 
