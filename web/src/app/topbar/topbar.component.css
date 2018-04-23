@@ -191,6 +191,8 @@
   }
   .locOption:hover {
     text-decoration-line: line-through;
+    background-color: var(--color-grey-grade2);
+    transition: background-color 0.1s;
     /* -webkit-transform: scale(1,1) translate3d(5%, 5%, -100px);
     -moz-transform: scale(1.2,1.2);
     transform: scale(1.2,1.2);

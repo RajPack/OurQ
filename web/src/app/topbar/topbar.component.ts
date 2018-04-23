@@ -47,27 +47,7 @@ export class TopBarComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-        this.geoService.locationRetriever().subscribe((data) => {           
-            geoCoder = new google.maps.Geocoder();
-            this.geoCodelatlang((function (addr) {
-                this.locationValue = addr;
-                let addComp = this.locationValue["address_components"];
-                for(let i = 0; i < addComp.length; i++){
-                    for(let key in this.geoService.locationMap){
-                        if(key.toLowerCase() === addComp[i].long_name.toLowerCase()){
-                            
-                            this.locationList = this.geoService.locationMap[key];
-                            this.locationDetected = true;
-                            this.locationCount = this.locationList.length;
-                            this.classCalculator(this.locationCount);
-                            this.changeDetRef.detectChanges();
-                        }
-                    }
-                }
-                return addr;
-            }).bind(this), data);
-            // this.topbarLocationForm.setValue({ location: this.locationValue });
-        })
+        this.goeCodeRetriver();
     }
 
     onSubmit() {
@@ -95,6 +75,32 @@ export class TopBarComponent implements OnInit, OnChanges {
         console.log(selecteddata);
     }
 
+    goeCodeRetriver() {
+        this.locationDetected = true;
+        this.geoService.locationRetriever().subscribe((data) => {       
+            geoCoder = new google.maps.Geocoder();
+            this.geoCodelatlang((function (addr) {
+                this.locationValue = addr;
+                let addComp = this.locationValue["address_components"];
+                for(let i = 0; i < addComp.length; i++){
+                    for(let key in this.geoService.locationMap){
+                        if(key.toLowerCase() === addComp[i].long_name.toLowerCase()){
+                            this.locationList = this.geoService.locationMap[key].map((data) => {
+                                return data;
+                            });
+                            this.locationDetected = true;
+                            this.locationCount = this.locationList.length;
+                            this.classCalculator(this.locationCount);
+                            console.log("GeoLocation Ended");
+                            this.changeDetRef.detectChanges();
+                        }
+                    }
+                }
+                return addr;
+            }).bind(this), data);
+        })
+    }
+
     geoCodelatlang(callback, data) {
         let latlng = new google.maps.LatLng(data.coords.latitude, data.coords.longitude);
         if (geoCoder) {
@@ -118,8 +124,18 @@ export class TopBarComponent implements OnInit, OnChanges {
                       (this.mainClassString = ( defString + " col-8"));
     }
 
-    locationRemove(args) {
-        console.log(args.target);
-        // this.locationCount = this.locationCount - 1;
+    locationRemove(args: any, id: any) {
+        this.locationList.splice(id, 1);
+        this.locationCount = this.locationCount - 1;
+        if(this.locationCount < 1){
+            this.classCalculator(this.locationCount);
+            this.locationDetected = !this.locationDetected;
+        }
+        this.changeDetRef.detectChanges();
+    }
+
+    onLocationSubmit() {
+        console.log("GeoLocation Started");
+        this.goeCodeRetriver();
     }
 }
