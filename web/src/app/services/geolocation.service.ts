@@ -14,7 +14,8 @@ export class GeoLocationService {
     locationMap = {
         bengaluru: [{ name: 'Bengaluru DC' },
                     { name: 'Bengaluru MNC' },
-                    { name: 'Bengaluru Continental' }],
+                    { name: 'Bengaluru Continental' },
+                    { name: 'Bengaluru Equinox'}],
         pune: [{ name: 'Pune DC' },
                { name: 'Mumbai DC' }]
     }

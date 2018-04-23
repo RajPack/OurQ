@@ -12,7 +12,7 @@ export class AppComponent {
   showMiniBar(){
     this.showMinimalSearch= this.isInViewport("topbar") ? false: true;
 
-    console.log(this.showMinimalSearch);
+    // console.log(this.showMinimalSearch);
 
     let elem = document.getElementById('topbarSearch');
     this.showMinimalSearch ? 

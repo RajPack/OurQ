@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, Input, OnChanges, ViewEncapsulation, ChangeDetectorRef } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Router, NavigationEnd, Event, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
@@ -23,11 +23,15 @@ export class TopBarComponent implements OnInit, OnChanges {
     locationValue: any = [];
     locationList: any;
     locationDetected: boolean = false;
+    locationCount: number = 0;
+    locationClass: string = "";
+    mainClassString: string = "iqLocationSpanInput iqLocationPadding col-8";
     // geoCoder: any;
 
     constructor(private fb: FormBuilder,
         private router: Router,
-        private geoService: GeoLocationService) {
+        private geoService: GeoLocationService,
+        private changeDetRef: ChangeDetectorRef) {
         this.initiateForm();
 
         this.router.events.filter((event) => {
@@ -51,8 +55,12 @@ export class TopBarComponent implements OnInit, OnChanges {
                 for(let i = 0; i < addComp.length; i++){
                     for(let key in this.geoService.locationMap){
                         if(key.toLowerCase() === addComp[i].long_name.toLowerCase()){
+                            
                             this.locationList = this.geoService.locationMap[key];
                             this.locationDetected = true;
+                            this.locationCount = this.locationList.length;
+                            this.classCalculator(this.locationCount);
+                            this.changeDetRef.detectChanges();
                         }
                     }
                 }
@@ -102,5 +110,16 @@ export class TopBarComponent implements OnInit, OnChanges {
                 }
             });
         }
+    }
+
+    classCalculator(count: number) {
+        let defString = "iqLocationSpanInput iqLocationPadding";
+        (count > 0) ? (this.mainClassString = ( defString + " col-11")) : 
+                      (this.mainClassString = ( defString + " col-8"));
+    }
+
+    locationRemove(args) {
+        console.log(args.target);
+        // this.locationCount = this.locationCount - 1;
     }
 }
