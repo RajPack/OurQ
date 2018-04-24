@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Params, ParamMap, ActivatedRoute, Router, Event, NavigationEnd, ActivatedRouteSnapshot } from "@angular/router";
 
 interface breadCrumb {
@@ -15,10 +15,12 @@ interface breadCrumb {
 
 export class BreadCrumbComponent implements OnInit {
     public breadcrumbs: breadCrumb[];
+    @Input() detectedLocationList: string;
 
     constructor(private route: ActivatedRoute, private router: Router) {
         this.breadcrumbs = [];
         console.log(this.router.routerState);
+        console.log(this.detectedLocationList);
     }
 
     ngOnInit() {

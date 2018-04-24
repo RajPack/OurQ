@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, OnChanges, ViewEncapsulation, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, Input, OnChanges, ViewEncapsulation, ChangeDetectorRef, Output, EventEmitter } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Router, NavigationEnd, Event, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import { GeoLocationService } from "../services/geolocation.service";
+
 declare const google: any;
 let geoCoder: any;
 
@@ -21,12 +22,13 @@ export class TopBarComponent implements OnInit, OnChanges {
     searchPlaceHolderVal: string;
     isHomePage: boolean;
     locationValue: any = [];
+    @Output() detectedLocationList: any = new EventEmitter<any>();
     locationList: any;
     locationDetected: boolean = false;
     locationCount: number = 0;
     locationClass: string = "";
     mainClassString: string = "iqLocationSpanInput iqLocationPadding col-8";
-    // geoCoder: any;
+    locationKey: string;
 
     constructor(private fb: FormBuilder,
         private router: Router,
@@ -85,6 +87,7 @@ export class TopBarComponent implements OnInit, OnChanges {
                 for(let i = 0; i < addComp.length; i++){
                     for(let key in this.geoService.locationMap){
                         if(key.toLowerCase() === addComp[i].long_name.toLowerCase()){
+                            this.locationKey = key.toUpperCase();
                             this.locationList = this.geoService.locationMap[key].map((data) => {
                                 return data;
                             });
@@ -92,6 +95,7 @@ export class TopBarComponent implements OnInit, OnChanges {
                             this.locationCount = this.locationList.length;
                             this.classCalculator(this.locationCount);
                             console.log("GeoLocation Ended");
+                            this.detectedLocationList.emit({listval: this.locationList, listkey: this.locationKey});
                             this.changeDetRef.detectChanges();
                         }
                     }
@@ -131,6 +135,7 @@ export class TopBarComponent implements OnInit, OnChanges {
             this.classCalculator(this.locationCount);
             this.locationDetected = !this.locationDetected;
         }
+        this.detectedLocationList.emit({listval: this.locationList, listkey: this.locationKey});
         this.changeDetRef.detectChanges();
     }
 

@@ -8,13 +8,14 @@
         <img src="./assets/images/logo.png" class="rounded float-left insteadQLogo" alt="...">
       </div>
       <div class="container apptopbarContainer col-11" id="topbarSearchcontainer">
-        <app-topbar [showMinimalSearch]="showMinimalSearch"></app-topbar>
+        <app-topbar [showMinimalSearch]="showMinimalSearch"
+                    (detectedLocationList)="getLocationBread($event)"></app-topbar>
       </div>
     </div>
   </div>
   <div class="container breadcrumbContainer col-12" 
        style="padding-left: 0; padding-right: 0;">
-      <app-breadcrumbs></app-breadcrumbs>
+      <app-breadcrumbs [detectedLocationList]="detectedLocationList"></app-breadcrumbs>
   </div>
   <div class="container bottomContainer col-12">
     <div class="container appsidebarContainer col-2">

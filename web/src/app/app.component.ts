@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+import { GeoLocationService } from './services/geolocation.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,13 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class AppComponent {
   showMinimalSearch: boolean = false;
+  detectedLocationList: string = "";
   
+  constructor(private changeDetectRef: ChangeDetectorRef, 
+              private geoService: GeoLocationService) {
+
+  }
+
   showMiniBar(){
     this.showMinimalSearch= this.isInViewport("topbar") ? false: true;
 
@@ -43,4 +50,18 @@ export class AppComponent {
     var viewportBottom = viewportTop + window.innerHeight	;
     return elementBottom > viewportTop && elementTop < viewportBottom;
     };
+
+  getLocationBread(args: any) {
+    this.detectedLocationList = "";
+    if(args.listval.length > 1){
+      this.detectedLocationList = args.listkey;
+    }else {
+      args.listval.forEach((element) => {
+        this.detectedLocationList = (this.detectedLocationList !==  "") ? 
+                                    (this.detectedLocationList + ":" + element.name) :
+                                    (args.listkey + ":" + element.name);
+      });
+    }
+    this.changeDetectRef.detectChanges();
+  }
 }
