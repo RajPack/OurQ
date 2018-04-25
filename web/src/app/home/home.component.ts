@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit, OnChanges {
     kiosks: KioskModel[];
 
     constructor(private route: ActivatedRoute) {
-        
+       
     }
 
     ngOnInit() {

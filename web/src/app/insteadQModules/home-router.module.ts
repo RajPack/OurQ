@@ -15,10 +15,10 @@ const homeRoutes: Routes = [
     },
     {
         path: 'home', 
-        component: HomeComponent,
+        component: HomeComponent, 
         resolve: { kiosks: KioskListResolver },
         data: {
-            breadCrumb: "Home"
+            breadValue: {breadCrumb: "Home", parent: "None", routerlink: "home", default: true}
         }
     },
     {
@@ -26,7 +26,7 @@ const homeRoutes: Routes = [
         component: KioskComponent,
         resolve: { kiosk: KioskItemResolver },
         data: {
-            breadCrumb: "Kiosk"
+            breadValue: {breadCrumb: "Kiosk", parent: "Home", routerlink: "home", default: false}
         }
     },
     {

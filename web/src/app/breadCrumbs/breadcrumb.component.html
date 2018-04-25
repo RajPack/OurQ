@@ -1,9 +1,23 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"
-          *ngIf="detectedLocationList !== ''">{{ detectedLocationList }}</li>
-      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item locationbreadcrumb"
+          *ngIf="detectedLocationList !== ''">{{ detectedLocationList }}</li> 
+      <li class="breadcrumb-item" *ngFor="let breadcrumb of breadCrumbList; let last = last"
+          [ngClass]="{'active': last}">
+          <a [routerLink]="breadcrumb.link" *ngIf="breadcrumb.link !== 'None'">
+              {{ breadcrumb.name }}
+          </a>
+          <a *ngIf="breadcrumb.link === 'None' && breadcrumb.id === 'None'">
+              {{ breadcrumb.name }}
+          </a>
+          <a *ngIf="breadcrumb.link === 'None' && breadcrumb.id !== 'None'">
+              {{ breadcrumb.name + ":" + breadcrumb.id }}
+          </a>
+      </li>
+
+
+      <!-- <li class="breadcrumb-item"><a routerLink="">Home</a></li>
       <li class="breadcrumb-item"><a href="#">Kiosk</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data</li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li> -->
     </ol>
   </nav>
