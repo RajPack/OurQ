@@ -14,8 +14,8 @@ export default function SideBarTemplate() {
             <div className="secondary-container sidebar-section">
                 <div className="section-title">Secondary Skills</div>
                     {
-                        this.state.secondarySkills.map((item)=>{
-                            return <div className="secondary-item">{item}</div>
+                        this.state.secondarySkills.map((item, index)=>{
+                            return <div className="secondary-item" key={index}>{item}</div>
                         })
                     }
             </div>

@@ -48,7 +48,7 @@
 
 @media screen and (min-width: 480px){
     .sidebar-container{
-        width: 34%;
+        max-width: 34%;
         min-height: 80vh; 
         order: 1;
     }

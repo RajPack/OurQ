@@ -14,10 +14,10 @@ export default class SideBar extends React.Component {
         }
     }
     generateRating() {
-        return this.state.primarySkills.map((ratingObj) => {
+        return this.state.primarySkills.map((ratingObj, index) => {
             let stars = ratingObj.rating;
             return (
-                <div className="rating-line">
+                <div className="rating-line" key={index}>
                     <div className="rating-title">{ratingObj.title}</div>
                     <div className="rating-stars">
                         {
@@ -34,7 +34,7 @@ export default class SideBar extends React.Component {
             var cls = "fa rating-star ";
             cls += stars > i ? (stars - i >= 1 ? "fa-star" : "fa-star-half-o") : "fa-star-o";
             starsArr.push(
-                <span className={cls}></span>
+                <span className={cls} key={i}></span>
             )
         }
         return starsArr;

@@ -2,11 +2,20 @@
     /* border: 1px solid red; */
     width: 100%;
     min-height: 500px;
+    text-align: justify;
+    padding: 10px;
+    color: #5B5B5B;
+    font-size: 15px;
 }
-
+.work-exp-title{
+    font-size: 20px;
+    color: #0085c3;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
 @media screen and (min-width: 480px){
     .maincontent-container{
-        width: 65%;
+        max-width: 62%;
         min-height: 80vh;
         flex-grow: 1;
         order: 2;
