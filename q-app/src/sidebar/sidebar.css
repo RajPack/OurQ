@@ -4,15 +4,38 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
+    color: #5B5B5B;
+}
+.section-content {
+    text-align: justify;
+}
+.sidebar-container{
+    padding: 10px;
+}
+.sidebar-container .section-title{
+    font-size: 20px;
+    color: #0085c3;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.sidebar-container .sidebar-section{
+    margin-bottom: 20px;
+}
+.rating-line .rating-star{
+    padding: 1.5px;
 }
 
 .rating-line{
     display: flex;
+    padding-bottom: 3px;
 }
 .rating-line .rating-title{
     max-width: 50%;
     min-width: 50%;
     margin-right: 5px;
+    font-size: 15px;
+    font-variant: small-caps;
+    
 }
 .rating-line .rating-stars{
     color: #0085c3;

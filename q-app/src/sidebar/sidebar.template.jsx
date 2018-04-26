@@ -13,7 +13,11 @@ export default function SideBarTemplate() {
             </div>
             <div className="secondary-container sidebar-section">
                 <div className="section-title">Secondary Skills</div>
-
+                    {
+                        this.state.secondarySkills.map((item)=>{
+                            return <div className="secondary-item">{item}</div>
+                        })
+                    }
             </div>
             <div className="edu-container sidebar-section">
                 <div className="section-title">Education</div>

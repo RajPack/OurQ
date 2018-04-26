@@ -11,7 +11,10 @@ export const data = {
         {title: "BackBone JS", rating: 4}
     ],
     secondarySkills: [
-        "HTML" , "CSS", "Sass", "Typescript", "Angular (2+)", "Angular JS", "Angular + Redux", "Gulp", "Webpack", "Nodejs", "Responsive Web Design", "Jquery" 
+        "HTML, CSS, Sass, Jquery", "Javascript, Typescript", 
+        "Angular (2+), Angular JS, Angular + Redux", 
+        "Gulp, Webpack", 
+        "Nodejs", "Responsive Web Design" 
     ],
     education : [
         "B.E. Computer Science"
