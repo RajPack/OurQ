@@ -1,0 +1,14 @@
+.top-bar-container {
+    border: 1px solid darkcyan;
+    min-height: 200px;
+    width: 100%;
+}
+
+@media screen and (min-width: 480px){
+    .top-bar-container{
+        min-height: 100px;
+        width: 100%;
+        order: 0; 
+    }
+    
+}

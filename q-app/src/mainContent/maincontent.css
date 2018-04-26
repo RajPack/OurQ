@@ -1,0 +1,14 @@
+.maincontent-container {
+    border: 1px solid red;
+    width: 100%;
+    min-height: 500px;
+}
+
+@media screen and (min-width: 480px){
+    .maincontent-container{
+        width: 65%;
+        min-height: 80vh;
+        flex-grow: 1;
+        order: 2;
+    }
+}
