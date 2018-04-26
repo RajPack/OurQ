@@ -53,3 +53,10 @@
         order: 1;
     }
 }
+@media print and (min-width: 480px){
+    .sidebar-container{
+        max-width: 34%;
+        min-height: 80vh; 
+        order: 1;
+    }
+}

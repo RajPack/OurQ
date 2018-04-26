@@ -11,7 +11,12 @@
     margin: auto;
   }
 }
-
+@media print and (min-width: 1000px){
+  .app-container{
+    width: 1000px;
+    margin: auto;
+  }
+}
 /* @media screen and (min-width: 900px){
   /* .app-container{
     width: 100%;

@@ -21,3 +21,11 @@
         order: 2;
     }
 }
+@media print and (min-width: 480px){
+    .maincontent-container{
+        max-width: 60%;
+        min-height: 80vh;
+        flex-grow: 1;
+        order: 2;
+    }
+}
