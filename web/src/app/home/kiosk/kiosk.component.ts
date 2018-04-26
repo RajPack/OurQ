@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from "@angular/core";
+import { Component, OnInit, OnChanges, OnDestroy } from "@angular/core";
 import { KioskItemsService } from "../../services/kiosksItems.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { KioskItem, CategorizedItem } from "../../models/kioskItemModel";
@@ -13,7 +13,7 @@ import { Observable } from "rxjs/Observable";
     styleUrls: ['./kiosk.component.css']
 })
 
-export class KioskComponent implements OnInit, OnChanges {
+export class KioskComponent implements OnInit, OnChanges, OnDestroy {
     items: KioskItem[];
     categorizedItems: CategorizedItem[];
     kioskObservable: Observable<KioskModel>;
@@ -24,7 +24,7 @@ export class KioskComponent implements OnInit, OnChanges {
                 private router: Router,
                 private route: ActivatedRoute,
                 private kioskService: KioskService) {
-
+        
     }
 
     ngOnInit() {
@@ -49,5 +49,9 @@ export class KioskComponent implements OnInit, OnChanges {
     addBtnOperation(item: KioskItem, args) {
         this.clickedId = args.target.id;
         item.cartCount = (item.cartCount === undefined) ? 1 : (item.cartCount++);
+    }
+
+    ngOnDestroy() {
+        console.log("Kiosk Component destroyed");
     }
 }

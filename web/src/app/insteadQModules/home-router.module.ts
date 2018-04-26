@@ -15,20 +15,19 @@ const homeRoutes: Routes = [
     },
     {
         path: 'home', 
-        component: KioskListComponent,
-        resolve: { kiosks: KioskListResolver }
-        // children: [
-        //     {
-        //         path: ':id', 
-        //         component: KioskComponent,
-        //         resolve: { kiosk: KioskItemResolver }
-        //     }
-        // ]
+        component: HomeComponent, 
+        resolve: { kiosks: KioskListResolver },
+        data: {
+            breadValue: {breadCrumb: "Home", parent: "None", routerlink: "home", default: true}
+        }
     },
     {
         path: 'kiosk/:id',
         component: KioskComponent,
-        resolve: { kiosk: KioskItemResolver }
+        resolve: { kiosk: KioskItemResolver },
+        data: {
+            breadValue: {breadCrumb: "Kiosk", parent: "Home", routerlink: "home", default: false}
+        }
     },
     {
         path: 'searchresult',

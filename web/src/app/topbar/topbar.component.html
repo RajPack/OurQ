@@ -1,6 +1,5 @@
 <div class="col-12" style="padding-right: 0;">
-    <div class="col-12 logincontainerdisplay" style="padding: 0;" 
-         *ngIf="!showMinimalSearch">
+    <div class="col-12 logincontainerdisplay" style="padding: 0;" *ngIf="!showMinimalSearch">
         <!-- <app-topbar-login></app-topbar-login> -->
         <div class="container loginbarContainer col-12" style="margin-top: 1%;">
             <span class="iquserbar col-3">
@@ -39,35 +38,68 @@
         <br>
         <br>
     </div>
-    <div class="col-12" style="padding: 0;" id="topbarSearch">
+    <div class="col-12" 
+         style="padding: 0;" 
+         id="topbarSearch">
         <!-- <app-topbar-search [showMinimalSearch]="showMinSearch"></app-topbar-search> -->
-        <div class="container searchbarContainer col-12" 
-             style="margin-top: 5%; margin-bottom: 2%;" 
-             id="topsearchbarcontainer">
-            <div *ngIf="!showMinimalSearch" class="col-6">
-                <form [formGroup]="topbarLocationForm" 
-                      (ngSubmit)="onSubmit()" 
-                      class="form-group col-12">
-                    <div class="iqlocationdiv col-12" 
-                         style="padding: 0; display: inline-flex">
+        <div class="container searchbarContainer col-12" style="margin-top: 5%; margin-bottom: 2%;" id="topsearchbarcontainer">
+            <div *ngIf="!showMinimalSearch && isHomePage" class="col-6">
+                <form [formGroup]="topbarLocationForm" (ngSubmit)="onLocationSubmit()" class="form-group col-12">
+                    <div class="iqlocationdiv col-12" style="padding: 0; display: inline-flex">
                         <div class="iqLocationSpanIcon iqLocationPadding col-1">
-                            <i class="fa fa-street-view fa-searchbar" 
-                               aria-hidden="true"></i>
+                            <i class="fa fa-street-view fa-searchbar" aria-hidden="true"></i>
                         </div>
-                        <div class="iqLocationSpanInput iqLocationPadding col-8">
+                        <div [class]="mainClassString">
                             <input type="text" 
                                    id="iqLocationInput" 
                                    class="iqLocationInput" 
                                    formControlName="location" 
-                                   placeholder="Type your location here...">
+                                   placeholder="Type your location here..."
+                                   *ngIf="!locationDetected">
+                            <div *ngIf="locationDetected" 
+                                  class="col-12" 
+                                  style="display: flex;
+                                         flex-wrap: wrap;">
+                                <div class="col-3 locOptionStatic"
+                                     *ngFor="let location of locationList; 
+                                             let idx = index"
+                                     style="padding: 0;
+                                            margin-left: 5%;
+                                            margin-bottom: 1%;
+                                            cursor: pointer;
+                                            background-color: #e0e0e0;"
+                                            (click)="locationRemove($event, idx)">
+                                    <div class="col-12 locOption" 
+                                         style="display: flex; 
+                                                padding: 1%; 
+                                                font-size: x-small;
+                                                margin-right: 8%;
+                                                font-weight: 700;">
+                                        <div class="col-1">
+                                            X
+                                        </div>
+                                        <div class="col-10">
+                                            {{ location.name }}
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <ng4geo-autocomplete 
+                                (componentCallback)= "autoCompleteCallback1($event)">
+                            </ng4geo-autocomplete> -->
                         </div>
-                        <div class="iqLocationSpanButton iqLocationPadding col-2">
+                        <div class="iqLocationSpanButton iqLocationPadding col-2"
+                             *ngIf="locationCount < 1">
                             <button type="submit" 
                                     class="btn btn-info mysearchbtn" 
-                                    style="margin-top: 3%;">
+                                    style="margin-top: 3%;"
+                                    [disabled]="locationDetected">
                                 Detect
                                 <i class="fa fa-crosshairs myIcn fa-searchbar" 
-                                   aria-hidden="true"></i>
+                                   aria-hidden="true"
+                                   *ngIf="!locationDetected"></i>
+                                <i class="fa fa-spinner fa-spin"
+                                   *ngIf="locationDetected"></i>
                             </button>
                         </div>
                     </div>
@@ -75,23 +107,16 @@
             </div>
             <!-- <span></span> -->
             <div class="col-6">
-                <form [formGroup]="topbarSearchForm" 
-                      (ngSubmit)="onSubmit()" 
-                    class="form-group col-12">
-                    <div class="iqsearchdiv col-12" 
-                         style="padding: 0; display: inline-flex;">
+                <form [formGroup]="topbarSearchForm" (ngSubmit)="onSubmit()" class="form-group col-12">
+                    <div class="iqsearchdiv col-12" style="padding: 0; display: inline-flex;">
                         <div class="iqLocationSpanIcon iqLocationPadding col-1">
                             <i class="fa fa-search fa-searchbar" aria-hidden="true"></i>
                         </div>
                         <div class="iqLocationSpanInput iqLocationPadding col-8">
-                            <input type="text" id="iqSearchInput" 
-                                   class="iqSearchInput" 
-                                   formControlName="search" placeholder="Search here...">
+                            <input type="text" id="iqSearchInput" class="iqSearchInput" formControlName="search" [placeholder]="searchPlaceHolderVal">
                         </div>
                         <div class="iqLocationSpanButton iqLocationPadding col-2">
-                            <button type="submit" 
-                                    [disabled]="!topbarSearchForm.valid" 
-                                    class="btn btn-info mysearchbtn">
+                            <button type="submit" [disabled]="!topbarSearchForm.valid" class="btn btn-info mysearchbtn">
                                 Search
                             </button>
                         </div>

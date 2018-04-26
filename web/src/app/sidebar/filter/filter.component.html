@@ -17,8 +17,10 @@
     </div>
 </div>
 <br>
-<div class="container-fluid col-12" style="padding: 0;">
-    <ngb-accordion #acc="ngbAccordion" activeIds="1-header">
+<div class="container-fluid col-12" 
+     style="padding: 0;"
+     *ngIf="isHomePage">
+    <ngb-accordion #acc="ngbAccordion" activeIds="1-header" aria-expanded="true">
         <!--closeOthers=true>-->
         <ngb-panel *ngFor="let filter of filterListObservable | async">
             <ng-template ngbPanelTitle>
