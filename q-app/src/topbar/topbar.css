@@ -1,9 +1,68 @@
 .top-bar-container {
-    border: 1px solid darkcyan;
+    /* border: 1px solid darkcyan; */
     min-height: 200px;
     width: 100%;
+    display: flex;
+    padding-top: 20px;
+    background: #f8f8f8;
 }
-
+.name-section{
+    flex-basis: 75%;
+}
+.profile-image-section{
+    flex-basis: 25%;
+    border-radius: 50px;
+}
+.profile-image-section img {
+    width: 150px;
+    height: 150px;
+    float: right;
+    border-radius: 94px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.name-section {
+    font-size: 12px;
+    color: #717171;
+}
+.top-bar-container .fa {
+    font-size: 24px;
+    width: 25px;
+    padding-bottom: 5px;
+    position: relative;
+    top: 1px;
+    color: #0085c3;
+}
+.name-section {
+    padding-left: 30px;
+}
+.top-bar-container span.fa.fa-birthday-cake {
+    font-size: 14px;
+}
+.top-bar-container span.fa.fa-envelope {
+    font-size: 13px;
+}
+.top-bar-container span.fa.fa-map-marker {
+    font-size: 19px;
+}
+.name-section .name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0085c3;
+    font-variant: small-caps; 
+}
+.name-section .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5B5B5B;
+    font-variant: small-caps; 
+}
+.name-section  .details-section{
+    padding: 10px 0px;
+}
+.name-section div {
+    padding: 2px 0px;
+}
 @media screen and (min-width: 480px){
     .top-bar-container{
         min-height: 100px;

@@ -8,10 +8,7 @@ export function AppTemplate() {
         <div className = 'app-container'>
             <TopBar />
             <SideBar />
-            
-            <MainContent list={this.state.listofMembers}> 
-                { (item, key)=>{ return <div key={"member_" + key}> {item} is present </div> } }
-            </MainContent>
+            <MainContent/> 
         </div>
     )
 }

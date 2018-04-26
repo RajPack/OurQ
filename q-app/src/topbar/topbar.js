@@ -2,24 +2,21 @@ import React, {Component} from 'react';
 import './topbar.css'
 import { TopBarTemplate } from './topbar.template';
 
+
 export default class TopBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "Senthil sleepy head",
-            showTitle: false
+            fullName : "Rajarajan Packianathan",
+            title : "Front End UI Specialist",
+            mobile: "+(91) 897-196-8322",
+            email: "letsthinkbetter@gmail.com",
+            dob: "01-May-1989",
+            place: "Bengaluru",
+            profilepath: "../assets/images/profile.jpg"
         }
     }
-    componentDidMount(){
-        setTimeout(()=>{
-            this.setState({
-                showTitle: true
-            });
-        }, 10000);
-    }
-    componentWillUnmount(){
 
-    }
     render(){
         return TopBarTemplate.call(this);
     }
