@@ -2,6 +2,20 @@
     /* border: 1px solid green; */
     width: 100%;
     min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-line{
+    display: flex;
+}
+.rating-line .rating-title{
+    max-width: 50%;
+    min-width: 50%;
+    margin-right: 5px;
+}
+.rating-line .rating-stars{
+    color: #0085c3;
 }
 
 @media screen and (min-width: 480px){
