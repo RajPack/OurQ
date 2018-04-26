@@ -24,18 +24,23 @@
 .rating-line .rating-star{
     padding: 1.5px;
 }
-
+.about-content, .edu-content{
+    font-size: 15px;
+}
 .rating-line{
     display: flex;
     padding-bottom: 3px;
 }
-.rating-line .rating-title{
+.rating-line .rating-title, .secondary-container .secondary-item{
     max-width: 50%;
     min-width: 50%;
     margin-right: 5px;
     font-size: 15px;
     font-variant: small-caps;
     
+}
+.secondary-container .secondary-item{
+    padding-bottom: 7px;
 }
 .rating-line .rating-stars{
     color: #0085c3;

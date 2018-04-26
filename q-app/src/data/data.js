@@ -16,9 +16,7 @@ export const data = {
         "Gulp, Webpack", 
         "Nodejs", "Responsive Web Design" 
     ],
-    education : [
-        "B.E. Computer Science"
-    ],
+    education : "B.E. Computer Science",
     workExperience : [
         {
             role: "Front end UI Programmer", company:"Infosys Ltd.", period: "Oct 2017 - Present",

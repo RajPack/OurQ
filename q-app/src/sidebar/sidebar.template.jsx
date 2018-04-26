@@ -5,7 +5,7 @@ export default function SideBarTemplate() {
         <div className='sidebar-container'>
             <div className="about-container sidebar-section">
                 <div className="section-title">About Me</div>
-                <div className="section-content">{this.state.about}</div>
+                <div className="section-content about-content">{this.state.about}</div>
             </div>
             <div className="primary-container sidebar-section">
                 <div className="section-title">Primary Skills</div>
@@ -21,7 +21,7 @@ export default function SideBarTemplate() {
             </div>
             <div className="edu-container sidebar-section">
                 <div className="section-title">Education</div>
-
+                    <div className="edu-content">{this.state.education}</div>
             </div>
         </div>
     )
