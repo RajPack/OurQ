@@ -12,7 +12,7 @@ export default function SideBarTemplate() {
                     {this.generateRating()}
             </div>
             <div className="secondary-container sidebar-section">
-                <div className="section-title">Secondary Skills</div>
+                <div className="section-title">Technologies</div>
                     {
                         this.state.secondarySkills.map((item, index)=>{
                             return <div className="secondary-item" key={index}>{item}</div>

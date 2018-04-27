@@ -7,7 +7,8 @@ export default class MainContent extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            workExp : data.workExperience
+            workExp : data.workExperience,
+            totalExp : data.totalExp
         }
     }
     generateWorkExpList () {

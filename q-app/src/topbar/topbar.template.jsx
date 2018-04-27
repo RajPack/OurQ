@@ -3,6 +3,7 @@ import React from 'react';
 export function TopBarTemplate() {
     return (
         <div className='top-bar-container'>
+            <div className='skew-bar'></div>
             <div className='name-section'>
                 <div className="name">{this.state.fullName}</div>
                 <div className="title">{this.state.title}</div>
