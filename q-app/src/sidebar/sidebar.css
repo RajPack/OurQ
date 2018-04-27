@@ -19,7 +19,12 @@
     padding-bottom: 15px;
 }
 .sidebar-container .sidebar-section{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    /* -webkit-box-shadow: -1px 4px 22px 3px #bbbbbbf2; */
+    /* box-shadow: -1px 4px 22px 3px #bbbbbbf2; */
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #e8e8e852
 }
 .rating-line .rating-star{
     padding: 1.5px;
@@ -48,14 +53,14 @@
 
 @media screen and (min-width: 480px){
     .sidebar-container{
-        max-width: 34%;
+        max-width: 36%;
         min-height: 80vh; 
         order: 1;
     }
 }
 @media print and (min-width: 480px){
     .sidebar-container{
-        max-width: 34%;
+        max-width: 38%;
         min-height: 80vh; 
         order: 1;
     }

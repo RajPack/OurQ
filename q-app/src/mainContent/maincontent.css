@@ -7,24 +7,55 @@
     color: #5B5B5B;
     font-size: 15px;
 }
+.maincontent-container{
+    margin-bottom: 15px;
+    /* -webkit-box-shadow: -1px 4px 22px 3px #bbbbbbf2; */
+    /* box-shadow: -1px 4px 22px 3px #bbbbbbf2; */
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #e8e8e852;
+    margin-top: 10px;
+}
 .work-exp-title{
     font-size: 20px;
     color: #0085c3;
     font-weight: bold;
     padding-bottom: 15px;
 }
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5B5B5B;
+    font-variant: small-caps;
+    padding-bottom: 2px;
+}
+.work-exp-item {
+    padding: 25px 0px;
+    margin: 5px 0px;
+}
+.period {
+    font-size: 14px;
+    font-style: oblique;
+    color: #00729e;
+    padding-bottom: 10px;
+}
+.company-title {
+    font-size: 17px;
+    color: #bc0000;
+    padding-bottom: 3px;
+}
 @media screen and (min-width: 480px){
     .maincontent-container{
-        max-width: 62%;
-        min-height: 80vh;
+        max-width: 59%;
+        min-height: auto;
         flex-grow: 1;
         order: 2;
     }
 }
 @media print and (min-width: 480px){
     .maincontent-container{
-        max-width: 60%;
-        min-height: 80vh;
+        max-width: 56%;
+        min-height: auto;
         flex-grow: 1;
         order: 2;
     }
