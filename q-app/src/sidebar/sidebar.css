@@ -14,7 +14,7 @@
 }
 .sidebar-container .section-title{
     font-size: 20px;
-    color: #0085c3;
+    color: #007DB8;
     font-weight: bold;
     padding-bottom: 15px;
 }
@@ -48,7 +48,7 @@
     padding-bottom: 7px;
 }
 .rating-line .rating-stars{
-    color: #0085c3;
+    color: #007DB8;
 }
 
 @media screen and (min-width: 480px){

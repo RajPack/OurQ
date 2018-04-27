@@ -32,7 +32,7 @@
     padding-bottom: 5px;
     position: relative;
     top: 1px;
-    color: #0085c3;
+    color: #007DB8;
 }
 .name-section {
     padding-left: 30px;
@@ -49,7 +49,7 @@
 .name-section .name {
     font-size: 32px;
     font-weight: bold;
-    color: #0085c3;
+    color: #007DB8;
     font-variant: small-caps; 
 }
 .name-section .title {

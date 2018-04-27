@@ -18,7 +18,7 @@
 }
 .work-exp-title{
     font-size: 20px;
-    color: #0085c3;
+    color: #007DB8;
     font-weight: bold;
     padding-bottom: 15px;
 }
@@ -44,6 +44,20 @@
     color: #bc0000;
     padding-bottom: 3px;
 }
+.logo-container{
+    height: 60px;
+    width: 120px;
+    float: right;
+    position: relative;
+    top: -20px;
+}
+.logo-container img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+
 @media screen and (min-width: 480px){
     .maincontent-container{
         max-width: 59%;
