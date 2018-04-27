@@ -30,7 +30,7 @@
     padding-bottom: 2px;
 }
 .work-exp-item {
-    padding: 25px 0px;
+    padding-bottom: 60px;
     margin: 5px 0px;
 }
 .period {
@@ -62,6 +62,7 @@
     .maincontent-container{
         max-width: 59%;
         min-height: auto;
+        max-height: 805px;
         flex-grow: 1;
         order: 2;
     }
@@ -70,6 +71,7 @@
     .maincontent-container{
         max-width: 56%;
         min-height: auto;
+        max-height: 875px;
         flex-grow: 1;
         order: 2;
     }
