@@ -12,9 +12,18 @@
   background: linear-gradient(145deg, #0d47a1, #42a5f5);
   color: #fff;
   width: 100%;
-  text-align: right;
+  display: flex;
   font-size: 13px;
   font-style: italic;
+}
+.footer-left-note{
+  padding-left: 10px;
+  order: 0;
+}
+.footer-right-note{
+  flex-grow: 1;
+  order: 1;
+  text-align: end;
 }
 @media screen and (min-width: 1000px) {
   .app-container {
