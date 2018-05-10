@@ -1,14 +1,17 @@
-import { Welcome } from './welcome.component';
+import { Card } from './card.component';
+import { Dashboard } from './dashboard.component';
+
+
 
 
 window.ReactComponents = {
-    Welcome: Welcome
+    Dashboard: Dashboard
 }
 
 
 document.addEventListener("DOMContentLoaded", bootstrapDemoApp);
 
-function bootstrapDemoApp(){
+function bootstrapDemoApp() {
     var rootElem = document.getElementById('welcome_root');
-    ReactDOM.render(React.createElement(ReactComponents.Welcome, null, null), rootElem );
+    ReactDOM.render(React.createElement(ReactComponents.Dashboard, null, null), rootElem);
 }

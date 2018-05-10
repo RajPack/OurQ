@@ -1,0 +1,20 @@
+.dashboard-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.account-section {
+    width: 25%;
+    min-width: 450px;
+}
+.shipping-section {
+    width: 25%;
+    min-width: 450px;
+}
+
+.card-section {
+    padding: 30px;
+}
+.card-body {
+    height: 150px;
+}
