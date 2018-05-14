@@ -21,11 +21,11 @@ export const data = {
         "Nodejs + Express", "Responsive Web Design" 
     ],
     education : "B.E. Computer Science",
-    totalExp: "7 Years, 4 Months",
+    totalExp: "7 Years, 5 Months",
     workExperience : [
         {
             role: "Front end UI Programmer / Consultant", company:"Infosys Ltd.", period: "Oct 2017 - Present", logo: "../assets/images/infosys.png",
-            synopsis: `Developed applications using Angular, RXJS and Redux for asset management dashboard for Dell. Designed and developed custom view-model* and Observables frameworks for a specific application in Dell that encouraged in-house frameworks over popular UI frameworks.
+            synopsis: `Developed applications using Angular, RXJS and Redux for asset management dashboard for Dell. Designed and developed custom view-model* and Observables frameworks for a specific application that encouraged in-house frameworks over popular UI frameworks.
             
             Developed a cafeteria application to order food using Angular + Nativescript (android and Web) as side project during spare time.
             `
