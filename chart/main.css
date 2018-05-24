@@ -1,0 +1,16 @@
+.chart-container {
+    padding: 30px 80px 15px 5px;
+    border: 1px solid #d0d0d0;
+    width: auto;
+    display: inline-flex;
+}
+
+body{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+.header{
+    color: #555555;
+    font-family: arial;
+}
