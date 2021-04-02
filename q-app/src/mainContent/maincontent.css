@@ -42,8 +42,12 @@
     padding-bottom: 2px;
 }
 .work-exp-item {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     margin: 5px 0px;
+    
+}
+.work-exp-item:last-child {
+    padding-bottom: 10px;
 }
 .period {
     font-size: 14px;

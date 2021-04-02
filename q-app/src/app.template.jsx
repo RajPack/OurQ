@@ -11,8 +11,8 @@ export function AppTemplate() {
             <SideBar />
             <MainContent/> 
             <div className='footer-note'>
-                <div className='footer-left-note'>Current favorite editor: Visual Studio Code</div>
-                <div className="footer-right-note"> If you would like to know, I have used React JS Components to build my resume </div>
+                {/* <div className='footer-left-note'>Current favorite editor: Visual Studio Code</div>
+                <div className="footer-right-note"> If you would like to know, I have used React JS Components to build my resume </div> */}
             </div>
         </div>
     )
