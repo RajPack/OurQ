@@ -1,7 +1,7 @@
 export const data = {
     about: `I am a strong front end web programmer with excellent javascript and web programming skills. 
             
-        My current forte is Angular and exprienced in numerous projects involving various front end frameworks such as Rxjs, Redux (ngRx), React JS etc. Proficient in Javascript Design Patterns and pay utmost importance to the architectural decisions and design patterns applied to each and every part of the application code.
+        My current forte is Angular and experienced in numerous projects involving various front end frameworks such as Rxjs, Redux (ngRx), React JS etc. Proficient in Javascript Design Patterns and pay utmost importance to the architectural decisions and design patterns applied to each and every part of the application code.
         
         Conducted numerous tech sessions on various web stack technologies to guide and help budding programmers to reach the desired expertise.`,
     primarySkills: [
@@ -27,7 +27,7 @@ export const data = {
     workExperience : [
         {
             role: 'UI Programmer / Lead, UI community Lead', company: "Siemens Healthineers Pvt Ltd", period: "Jul 2018 - Present", logo: "../assets/images/siemens.svg",
-            synopsis: `Revamped Siemens medical applications and brought in latest technologies and standards into their application suites. Rewrote, Angular js app to Angular v7 (now in v11) and established industry best practices and standards.
+            synopsis: `Revamped Siemens medical applications and brought in the latest technologies and standards into their application suites. Rewrote, Angular js app to Angular v7 (now in v11) and established industry's best practices and standards.
             
             Solely, written many utility libraries such as XLSX exporter, SVG graphs, communication brokers to serve as common shared package for large suites of applications. Again, individually written the UI controls library (including feature rich data grid tables, date range pickers etc.) as reusable components based on Siemens UX style guides for wider use in suites of applications. Built a UI e2e test library that runs on top of google's puppeteer, with the purpose to simplify the automation process and bring ease of use and convenience to programmers of varying skills.
             
