@@ -81,7 +81,7 @@
     .maincontent-container{
         max-width: 59%;
         min-height: auto;
-        max-height: 805px;
+        /* max-height: 805px; */
         flex-grow: 1;
         order: 2;
     }
@@ -89,7 +89,7 @@
 @media print and (min-width: 480px){
     .maincontent-container{
         max-width: 56%;
-        max-height: 862px;
+        max-height: 1012px;
         flex-grow: 1;
         order: 2;
     }
